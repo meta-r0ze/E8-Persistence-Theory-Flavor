@@ -1,0 +1,59 @@
+\documentclass[aps,prd,twocolumn,showpacs,superscriptaddress,groupedaddress,nofootinbib,english]{revtex4-2}  
+
+% Packages you will need
+\usepackage{amsmath}  % Math formulas
+\usepackage{amssymb}  % Math symbols (like \mathbb, \mathcal)
+\usepackage{graphicx} % Images
+\usepackage[pdfencoding=auto]{hyperref} % Hyperlinks
+\usepackage{bm}       % Bold math
+\usepackage{booktabs} % For professional table formatting
+\usepackage{array}    % For better column definitions
+\usepackage{tabularx, siunitx}
+\usepackage[ngerman, main=english]{babel}
+\usepackage{siunitx}
+\usepackage[noabbrev]{cleveref} % Load this LAST in your preamble
+\usepackage{catchfilebetweentags} 
+
+\makeatletter
+\let\l@de\l@ngerman
+\makeatother
+\makeatletter
+\let\l@en\l@english
+\makeatother
+
+\begin{document}
+
+% Title Area
+\title{The \texorpdfstring{$E_8$}{E8}-Persistence Theory III: Interaction Dynamics and Flavor Mixing}
+
+
+\author{Kate Lenore Meyer}
+\affiliation{Independent Researcher}
+\email{kate.physics@meyerhome.net}
+
+\date{\today}
+
+\input{paper/0_abstract}
+
+\maketitle % Generates the title block
+
+% Main Content
+\input{paper/1_introduction}
+
+% Main Content
+\input{paper/2_logic_of_transition}
+\input{paper/3_foundations}
+\input{paper/4_cmk}
+\input{paper/5_PMNS_Matrix}
+\input{paper/6_}
+\input{paper/7_predictions}
+\input{paper/8_discussion}
+\input{paper/9_audit}
+\input{paper/10_conclusion}
+
+\input{paper/appendix}
+
+% Bibliography
+%\bibliography{articles}
+
+\end{document}
