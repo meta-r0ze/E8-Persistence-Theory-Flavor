@@ -10,9 +10,14 @@
 \usepackage{array}    % For better column definitions
 \usepackage{tabularx, siunitx}
 \usepackage[ngerman, main=english]{babel}
-\usepackage{siunitx}
-\usepackage[noabbrev]{cleveref} % Load this LAST in your preamble
 \usepackage{catchfilebetweentags} 
+\usepackage{siunitx}
+\sisetup{
+    separate-uncertainty = true,  % Forces the ± symbol
+    multi-part-units = single,    % Wraps units: (1.2 ± 0.1) kg
+    sticky-per = true             % Helps with complex units
+}
+\usepackage[noabbrev]{cleveref} % Load this LAST in your preamble
 
 \makeatletter
 \let\l@de\l@ngerman
