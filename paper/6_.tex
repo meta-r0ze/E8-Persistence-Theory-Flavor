@@ -1,14 +1,17 @@
 \section{Systemic Interaction Benchmarks}
+\CatchFileBetweenTags{\WeakAngleVal}{calculations/constants.tex}{WeakAngleVal}
+\CatchFileBetweenTags{\GSTCheckVal}{calculations/constants.tex}{GSTCheckVal}
+\CatchFileBetweenTags{\quad}{calculations/constants.tex}{quad}
 
 \subsection{The GST Relation: Geometric Basis}
 The Gatto-Sartori-Tonin (GST) relation conceptually links the gauge sector to the flavor sector. In the $E_8$-Persistence framework, this is not an algebraic coincidence but a consequence of the single finite capacity of the lattice.
 
-As established in Paper I (Section IX), the **Weak Mixing Angle** ($\sin^2 \theta_W$) is the partition ratio of the Temporal Resonance to the Total System Capacity:
+As established in Paper I (Section IX), the Weak Mixing Angle ($\sin^2 \theta_W$) is the partition ratio of the Temporal Resonance to the Total System Capacity:
 \begin{equation}
-\sin^2 \theta_W = \frac{\Delta}{N_{sys}} = \frac{43}{192.907} \approx \mathbf{0.2229}
+\sin^2 \theta_W = \frac{\Delta}{N_{sys}} = \frac{43}{192.907} \approx \textbf{\WeakAngleVal}
 \end{equation}
 
-As derived in this work (Section III), the **Cabibbo Angle** ($\sin \theta_C$) is the leakage ratio of the Interface to the Active Flavor Width:
+As derived in this work (Section III), the Cabibbo Angle ($\sin \theta_C$) is the leakage ratio of the Interface to the Active Flavor Width:
 \begin{equation}
 \sin \theta_C = \frac{\pi}{\nu - \chi} = \frac{\pi}{14} \approx \mathbf{0.2244}
 \end{equation}
@@ -19,7 +22,26 @@ We observe that the linear aperture of flavor mixing is structurally identical t
 \sin \theta_C \approx \sin^2 \theta_W
 \end{equation}
 \begin{equation}
-|0.2244 - 0.2229| \approx 0.0015 \quad (< 0.7\%)
+|\CabibboSineVal - \WeakAngleVal| \approx \GSTCheckVal \quad (< 0.7\%)
 \end{equation}
 
 This confirms that the Gauge Rotation ($\theta_W$) and the Mass Rotation ($\theta_C$) are two manifestations of the same \textbf{Geometric Partitioning Protocol}. The Selection Principle does not maintain two separate ledgers; it allocates the singular bandwidth ($H_{sys} \approx \Delta/2$) against the topological boundary cost ($\pi$ vs. $\Delta$) for both forces and masses simultaneously.
+
+\subsection{Structural Resonance: The Golden Cost of Time}
+We observe a striking geometric relationship between the magnitude of CP Violation ($J$, derived in this paper via the CKM matrix) and the Vacuum Temporal Tax ($T$, derived in Paper I via lattice entropy).
+
+\begin{equation}
+\frac{J}{T} \approx \frac{3.08 \times 10^{-5}}{1.185 \times 10^{-5}} \approx \mathbf{2.60}
+\end{equation}
+
+This ratio aligns with the Squared Golden Ratio modulated by the Manifold Friction ($\eta \approx 0.994$) derived in Paper I. We propose the exact structural identity:
+\begin{equation}
+J = (\phi^2 \cdot \eta) \cdot T
+\end{equation}
+
+\subsubsection{Physical Interpretation}
+\begin{itemize}
+    \item $T$ is the metabolic cost of a linear time step (The Clock).
+    \item $J$ is the informational asymmetry required to distinguish ``forward'' from ``backward'' (The Arrow).
+\end{itemize}
+Just as a 3D object casts a 2D shadow, the metabolic cost of the 8D lattice casts a ``Golden Shadow'' onto the 4D manifold. That shadow is CP violation.

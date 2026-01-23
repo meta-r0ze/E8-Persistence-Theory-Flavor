@@ -4,51 +4,96 @@ In standard particle physics, the unitarity of the CKM matrix is a fundamental p
 
 Because the total causal flow is restricted to the 16 chiral channels of the $E_8$ substrate, the information density cannot exceed unity. Probability conservation is enforced by the State Space Limit. Consequently, the sum of Persistence probability (authorized tier stability) and Leakage probability (interface shifts) must equate to exactly $1.0$ for each generational row and column. This Unitary Solvency ensures that the "Standard Model" software remains synchronized with the available chiral density.
 
-\subsection{A. The Full CKM Derivation Table (Magnitudes)}
+\subsection{The Full CKM Derivation Table (Magnitudes)}
+
+Table \ref{tab:ckm_derivation} presents the complete geometric derivation of the CKM matrix elements. These values are calculated directly from the lattice invariants without reference to experimental data or fitted parameters.
+
+\subsubsection*{Note on Geometric Precision: Topology vs. Volume}
+
+A critical feature of this derivation is the absence of the Manifold Friction factor ($\eta \approx 0.994$) that appeared in the mass derivations of Paper I. In the $E_8$-Persistence framework, physical observables fall into two distinct geometric classes:
+
+\begin{itemize}
+    \item \textbf{Volumetric Quantities (Mass, Charge, Coupling):} These represent the \emph{content} of the lattice nodes. Because they fill the bulk manifold, they are subject to the projection overhead ($\eta$) of mapping discrete lattice bits into continuous spacetime volume.
+    
+    \item \textbf{Topological Quantities (Mixing Angles, Phases):} These represent the \emph{boundaries} between states. A boundary on an integer lattice is a precise topological cut. The geometry of an interface (e.g., the aspect ratio $\pi/14$) is determined strictly by the integer coordinates of the boundary nodes, independent of the node capacity.
+\end{itemize}
+
+Consequently, Flavor Mixing angles are derived as \textbf{Exact Geometric Ratios}, providing a rigid test of the lattice topology unblurred by thermodynamic friction.
+
+\cref{tab:ckm_derivation}
+
+
+% --- Load Dynamic Constants from Python Output ---
+\CatchFileBetweenTags{\CabibboSineVal}{calculations/constants.tex}{CabibboSineVal}
+\CatchFileBetweenTags{\CabibboSineEq}{calculations/constants.tex}{CabibboSineEq}
+\CatchFileBetweenTags{\CabibboSineExp}{calculations/constants.tex}{CabibboSineExperimentalValue}
+
+\CatchFileBetweenTags{\VubVal}{calculations/constants.tex}{VubVal}
+\CatchFileBetweenTags{\VubEq}{calculations/constants.tex}{VubEq}
+\CatchFileBetweenTags{\VubExp}{calculations/constants.tex}{VubExperimentalValue}
+
+\CatchFileBetweenTags{\VcbVal}{calculations/constants.tex}{VcbVal}
+\CatchFileBetweenTags{\VcbEq}{calculations/constants.tex}{VcbEq}
+\CatchFileBetweenTags{\VcbExp}{calculations/constants.tex}{VcbExperimentalValue}
+
+\CatchFileBetweenTags{\VudVal}{calculations/constants.tex}{VudVal}
+\CatchFileBetweenTags{\VudEq}{calculations/constants.tex}{VudEq}
+\CatchFileBetweenTags{\VudExp}{calculations/constants.tex}{VudExperimentalValue}
+
+\CatchFileBetweenTags{\VcsVal}{calculations/constants.tex}{VcsVal}
+\CatchFileBetweenTags{\VcsEq}{calculations/constants.tex}{VcsEq}
+\CatchFileBetweenTags{\VcsExp}{calculations/constants.tex}{VcsExperimentalValue}
 
 \begin{table*}[h]
 \centering
 \caption{\textbf{Derivation of CKM Matrix Elements.} Comparison of geometric predictions (System III) against PDG 2024 global fit values. The derivation uses zero free parameters, relying solely on the lattice invariants $\nu=16, \chi=2, D=4$.}
 \label{tab:ckm_derivation}
-\renewcommand{\arraystretch}{1.5}
+\renewcommand{\arraystretch}{1.6} 
 \setlength{\tabcolsep}{6pt}
 \begin{tabular}{@{} l l l c c r @{}} 
 \toprule
 \textbf{Transition} & \textbf{Element} & \textbf{Geometric Formula} & \textbf{Predicted} & \textbf{Target (PDG)} & \textbf{Accuracy} \\
 \midrule
 \multicolumn{6}{l}{\textit{Generation 1 (Chiral Aperture)}} \\
-$u \to d$ & $V_{ud}$ & $\sqrt{1 - (V_{us}^2 + V_{ub}^2)}$ & \textbf{0.97449} & $0.97438$ & \textbf{99.99\%} \\
-$u \to s$ & $V_{us}$ & $\frac{\pi}{\nu - \chi}$ & \textbf{0.22440} & $0.22500$ & \textbf{99.73\%} \\
-$u \to b$ & $V_{ub}$ & $1 / (\chi \alpha^{-1} + \pi)$ & \textbf{0.00361} & $0.00364$ & \textbf{99.20\%} \\
+$u \to d$ & $V_{ud}$ & $\VudEq$ & \textbf{\VudVal} & \VudExp & \textbf{99.99\%} \\
+$u \to s$ & $V_{us}$ & $\CabibboSineEq$ & \textbf{\CabibboSineVal} & \CabibboSineExp & \textbf{99.73\%} \\
+$u \to b$ & $V_{ub}$ & $\VubEq$ & \textbf{\VubVal} & \VubExp & \textbf{99.20\%} \\
 \midrule
 \multicolumn{6}{l}{\textit{Generation 2 (Dimensional Shift)}} \\
-$c \to d$ & $V_{cd}$ & $V_{us}$ (Unitary Reflection) & \textbf{0.22440} & $0.22480$ & \textbf{99.82\%} \\
-$c \to s$ & $V_{cs}$ & $\sqrt{1 - (V_{cd}^2 + V_{cb}^2)}$ & \textbf{0.97362} & $0.97349$ & \textbf{99.99\%} \\
-$c \to b$ & $V_{cb}$ & $(\pi + \chi) / (\alpha^{-1} - D\pi)$ & \textbf{0.04131} & $0.04120$ & \textbf{99.70\%} \\
+$c \to d$ & $V_{cd}$ & $V_{us}$ (Unitary Reflection) & \textbf{\CabibboSineVal} & $0.22480$ & \textbf{99.82\%} \\
+$c \to s$ & $V_{cs}$ & $\VcsEq$ & \textbf{\VcsVal} & \VcsExp & \textbf{99.99\%} \\
+$c \to b$ & $V_{cb}$ & $\VcbEq$ & \textbf{\VcbVal} & \VcbExp & \textbf{99.70\%} \\
 \bottomrule
 \end{tabular}
 \end{table*}
 
-\subsection{B. The Unitary Matrix Representation}
+
+% --- Load Full Matrix Tags ---
+\CatchFileBetweenTags{\VcdVal}{calculations/constants.tex}{VcdVal}
+\CatchFileBetweenTags{\VtdVal}{calculations/constants.tex}{VtdVal}
+\CatchFileBetweenTags{\VtsVal}{calculations/constants.tex}{VtsVal}
+\CatchFileBetweenTags{\VtbVal}{calculations/constants.tex}{VtbVal}
+
+\subsection{The Unitary Matrix Representation}
 
 The following matrix represents the global equilibrium of the flavor sector. Diagonal elements represent Persistence Efficiency, which scales super-linearly with the resonance tier.
 
 \begin{equation}
 |V_{CKM}| = 
 \begin{pmatrix}
-0.97449 & 0.22440 & 0.00361 \\
-0.22440 & 0.97362 & 0.04131 \\
-0.00898 & 0.04049 & 0.99914
+\VudVal & \CabibboSineVal & \VubVal \\
+\CabibboSineVal & \VcsVal & \VcbVal \\
+\VtdVal & \VtsVal & \VtbVal
 \end{pmatrix}
 \end{equation}
 
 All values represent absolute magnitudes $|V_{ij}|$.
 
-\subsection{C. Geometric Unitarity and Reciprocal Elements}
+\subsection{Geometric Unitarity and Reciprocal Elements}
 
 In the Standard Model, unitarity ($\sum |V_{ij}|^2 = 1$) is a postulate. In the $E_8$-Persistence Theory, it is a consequence of \textbf{State Saturation}. Because the chiral state space is limited to $\nu=16$ channels, the Unitary Probability Conservation follows from saturated state-space logic: probability cannot be lost, only re-routed.
 
-\subsubsection{1. Conservation of Interference}
+\subsubsection{Conservation of Interference}
 The off-diagonal elements ($V_{cd}, V_{ts}, V_{td}$) are not independent variables; they are the geometric reflections of the primary leakage pathways defined in Section II.B. The Unitarity Constraint enforces a symmetry between forward and reverse transitions to prevent channel over-occupation.
 
 \begin{itemize}
@@ -62,28 +107,28 @@ The off-diagonal elements ($V_{cd}, V_{ts}, V_{td}$) are not independent variabl
     \end{equation}
 \end{itemize}
 
-\subsubsection{2. Diagonal Persistence}
+\subsubsection{Diagonal Persistence}
 The diagonal elements ($V_{ud}, V_{cs}, V_{tb}$) represent the \textbf{Geometric Stiffness} of the generation—the probability that a topological knot retains its identity against the vacuum flux. These are calculated strictly as the unitarity residual:
 \begin{equation}
 |V_{ii}| = \sqrt{1 - \sum_{j \neq i} |V_{ij}|^2}
 \end{equation}
 This derivation reduces the degrees of freedom of the CKM matrix from 4 empirical parameters to 0, as all elements are generated entirely from the primary geometric transitions ($\pi/14$, etc.) and the saturation constraint.
 
-\subsection{D. The CP-Violating Phase: Geometric Diode Offset}
+\subsection{The CP-Violating Phase: Geometric Diode Offset}
 
 In the Standard Model, the CP-violating phase ($\delta_{CP}$) is a free parameter required to explain the asymmetry between matter and antimatter. In the $E_8$-Persistence Theory, this phase is derived as the necessary angular offset of the \textbf{Chiral Projection Operator}.
 
-\subsubsection{1. The Chiral Truncation Mechanism}
+\subsubsection{The Chiral Truncation Mechanism}
 As established in Paper I, the causal arrow of time is enforced by truncating the total lattice degrees of freedom ($N=32$) to the chiral state space rank ($\nu=16$). This truncation breaks the parity symmetry of the substrate. However, the lattice retains its fundamental 5-fold rotational symmetry ($\sigma=5$) in the projection, while the particle nodes retain their 2-point topological boundaries ($\chi=2$).
 
-\subsubsection{2. The Geometric Phase Derivation}
+\subsubsection{The Geometric Phase Derivation}
 The CP phase $\delta$ corresponds to the geometric angle between the Lattice Symmetry vector ($\sigma$) and the Topological Boundary vector ($\chi$) in the projection space. Geometrically, the phase lag is defined as the angle whose tangent is the ratio of the rotational freedom to the boundary lock:
 
 \begin{equation}
 \delta = \arctan\left(\frac{\sigma}{\chi}\right) = \arctan\left(\frac{5}{2}\right)
 \end{equation}
 
-\subsubsection{3. Numerical Result}
+\subsubsection{Numerical Result}
 \begin{equation}
 \delta \approx 68.1986^\circ
 \end{equation}
@@ -95,7 +140,7 @@ The CP phase $\delta$ corresponds to the geometric angle between the Lattice Sym
 
 \textbf{Physical Interpretation:} CP violation is not an arbitrary force; it is the Topological Phase Offset of the Chiral Projection Operator. The universe cannot maintain both causality (Chiral Truncation) and perfect CP symmetry simultaneously. The phase $\delta$ is the invariant geometric signature of this broken symmetry.
 
-\subsection{E. The Jarlskog Invariant: The Informational Cost of Causality}
+\subsection{The Jarlskog Invariant: The Informational Cost of Causality}
 
 The Jarlskog Invariant ($J$) is a rephasing-invariant measure of CP violation strength. In Informational Energetics, $J$ represents the Total Dissipative Cross-Section of the Chiral Projection Operator.
 
