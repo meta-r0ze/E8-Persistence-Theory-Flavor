@@ -120,6 +120,13 @@ REFS = {
         "nufit_5_3"
     ),
 
+    "delta_cp_neutrino": MeasuredVal(
+        230.0, 
+        30.0, 
+        "deg", 
+        "nufit_5_3"
+    ),
+
     # --- Paper I Inputs (For GST Relation) ---
     "sin2_w": MeasuredVal(
         0.22291,
@@ -227,10 +234,11 @@ def run_global_audit(results_dict, refs, latex_mode=False):
         ("Vub", "vub", "|V_ub| (Tunneling)"),
         ("Vcb", "vcb", "|V_cb| (Dimensional)"),
         ("J",   "jarlskog", "Jarlskog Inv"),
-        ("CP",  "delta_cp", "CP Phase"),
+        ("CP",  "delta_cp", "CP Phase (Quark)"),
         ("Sol", "theta_12_sin2", "Solar Angle"),
         ("Atm", "theta_23_sin2_sym", "Atmos Angle"),
-        ("Reac","theta_13_sin2", "Reactor Angle")
+        ("Reac","theta_13_sin2", "Reactor Angle"),
+        ("CP_N", "delta_cp_neutrino", "CP Phase (Nu)")
     ]
     
     total_chi2 = 0.0
@@ -573,6 +581,24 @@ def main():
         context="Reactor Mixing"
     )
 
+    # 4. Neutrino CP Phase (The Golden Angle)
+    # Logic: Neutrinos follow continuous Golden Ratio geometry (H4). 
+    # The phase is the full circle normalized by Phi.
+    DELTA_CP_NEUTRINO = 360.0 / PHI 
+
+    print_derivation(
+        name="Neutrino CP Phase (Golden Angle)",
+        tag="NeutrinoCP",
+        formula_sym="360 / phi",
+        latex_sym=r"\frac{360^{\circ}}{\phi}",
+        formula_num=f"360 / {PHI:.4f}",
+        result=DELTA_CP_NEUTRINO,
+        latex_mode=LATEX_MODE,
+        ref_key="delta_cp_neutrino",
+        unit="deg",
+        context="NuFIT Best Fit"
+    )
+
     # ==========================================
     # GST RELATION (The Unification)
     # ==========================================
@@ -634,8 +660,10 @@ def main():
         "CP": DELTA_CP_DEG,
         "Sol": SIN2_12_GEO,
         "Atm": SIN2_23_GEO,
-        "Reac": SIN2_13_GEO
+        "Reac": SIN2_13_GEO,
+        "CP_N": DELTA_CP_NEUTRINO
     }
+
     
     run_global_audit(RESULTS, REFS, LATEX_MODE)
 
