@@ -28,55 +28,55 @@ REFS = {
         0.22500, 
         0.00067, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vub": MeasuredVal(
         0.00364, 
         0.00013, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vcb": MeasuredVal(
         0.04120, 
         0.00068, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vud": MeasuredVal(
         0.97438, 
         0.00019, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vcd": MeasuredVal(
         0.22480, 
         0.00067, 
         "", 
-        "pdg_2024_ckm" # Often linked to Vus
+        "navas_review_2024" # Often linked to Vus
     ),
     "vcs": MeasuredVal(
         0.97349, 
         0.00016, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vts": MeasuredVal(
         0.04041, 
         0.00067, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vtb": MeasuredVal(
         0.99914, 
         0.00002, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "vtd": MeasuredVal(
         0.00857, 
         0.00020, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
 
     # --- CP Violation ---
@@ -84,13 +84,13 @@ REFS = {
         3.08e-5, 
         0.15e-5, 
         "", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
     "delta_cp": MeasuredVal(
         68.2, 
         4.5, 
         "deg", 
-        "pdg_2024_ckm"
+        "navas_review_2024"
     ),
 
     # --- PMNS Matrix (Neutrinos) - NuFIT 5.3 (Normal Ordering) ---
@@ -98,33 +98,33 @@ REFS = {
         0.307, 
         0.013, 
         "", 
-        "nufit_5_3"
+        "esteban_nufit-60_2024"
     ),
     "theta_23_sin2": MeasuredVal(
         0.546, # Note: Octant degeneracy makes this range 0.51-0.57. E8 predicts 0.5.
         0.021, 
         "", 
-        "nufit_5_3"
+        "esteban_nufit-60_2024"
     ),
     # Using 0.51 from global fit w/o Super-K constraint for "Atmospheric" comparison
     "theta_23_sin2_sym": MeasuredVal(
         0.51, 
         0.03, 
         "", 
-        "nufit_5_3"
+        "esteban_nufit-60_2024"
     ),
     "theta_13_sin2": MeasuredVal(
         0.0220, 
         0.0007, 
         "", 
-        "nufit_5_3"
+        "esteban_nufit-60_2024"
     ),
 
     "delta_cp_neutrino": MeasuredVal(
         230.0, 
         30.0, 
         "deg", 
-        "nufit_5_3"
+        "esteban_nufit-60_2024"
     ),
 
     # --- Paper I Inputs (For GST Relation) ---
