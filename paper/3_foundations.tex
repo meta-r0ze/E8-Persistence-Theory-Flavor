@@ -28,15 +28,18 @@ This transition occurs between adjacent linear resonance tiers. As derived in Pa
 |V_{us}| = \sin\theta_C = \frac{\text{Interface}}{\text{Active Width}} = \frac{\pi}{\nu - \chi}
 \end{equation}
 
+\CatchFileBetweenTags{\CabibboSineVal}{calculations/flavor_geometry.tex}{CabibboSineVal}
+\CatchFileBetweenTags{\CabibboSineExperimentalValue}{calculations/flavor_geometry.tex}{CabibboSineExperimentalValue}
+\CatchFileBetweenTags{\CabibboSineAccText}{calculations/flavor_geometry.tex}{CabibboSineAccText}
+
 \textbf{Calculation:}
 \begin{equation}
-\sin\theta_C = \frac{\pi}{14} \approx \mathbf{0.224399475}
+\sin\theta_C = \frac{\pi}{14} \approx \mathbf{\CabibboSineVal}
 \end{equation}
 
 \begin{itemize}
-    \item \textbf{Geometric Prediction:} $0.224399475$
-    \item \textbf{Experimental Value (PDG 2024):} $0.22500 \pm 0.00067$
-    \item \textbf{Accuracy:} Matches within $0.9\sigma$.
+    \item \textbf{Experimental Value:} \CabibboSineExperimentalValue
+    \item \textbf{Accuracy:} \CabibboSineAccText
 \end{itemize}
 
 \subsubsection{Type II: Field Shift (Dimensional Promotion)}

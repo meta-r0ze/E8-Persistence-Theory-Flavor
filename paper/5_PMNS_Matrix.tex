@@ -82,7 +82,10 @@ Neutrino Phase ($\delta_{PMNS}$) & Golden Angle ($2\pi / \phi$) & $222.5^{\circ}
 
 
 
-
+\CatchFileBetweenTags{\AtmosAngleVal}{calculations/flavor_geometry.tex}{AtmosAngleVal}
+\CatchFileBetweenTags{\AtmosAngleEq}{calculations/flavor_geometry.tex}{AtmosAngleEq}
+\CatchFileBetweenTags{\AtmosAngleExperimentalValue}{calculations/flavor_geometry.tex}{AtmosAngleExperimentalValue}
+\CatchFileBetweenTags{\AtmosAngleAccText}{calculations/flavor_geometry.tex}{AtmosAngleAccText}
 
 \subsection{The Atmospheric Angle (\texorpdfstring{$\theta_{23}$}{theta23}): The Boundary Limit}
 
@@ -96,14 +99,24 @@ Neutrino Phase ($\delta_{PMNS}$) & Golden Angle ($2\pi / \phi$) & $222.5^{\circ}
 \end{itemize}
 
 \begin{equation}
-\sin^2 \theta_{23} = \frac{1}{\chi} = \frac{1}{2} = \mathbf{0.5000}
+\sin^2 \theta_{23} = \AtmosAngleEq = \frac{1}{2} = \mathbf{\AtmosAngleVal}
 \end{equation}
 
 \begin{itemize}
-    \item \textbf{Experimental Target (NuFIT 5.3):} $0.51 \pm 0.03$ (Normal Hierarchy)
-    \item \textbf{Accuracy:} 98.0\%
-    \item \textbf{Physical Meaning:} This is Maximal Mixing. The $\chi=2$ boundary allows equal probability distribution between the $\mu$ and $\tau$ sectors. This explains why $\theta_{23}$ is close to $45^\circ$ while quark angles are small; quarks are constrained by the Manifold Drag ($\pi$), while neutrinos are constrained only by the Topology ($\chi$).
+    \item \textbf{Experimental Target:} \AtmosAngleExperimentalValue
+    \item \textbf{Accuracy:} \AtmosAngleAccText
 \end{itemize}
+
+\textbf{Physical Meaning:} This is Maximal Mixing. The $\chi=2$ boundary allows equal probability distribution between the $\mu$ and $\tau$ sectors. This explains why $\theta_{23}$ is close to $45^\circ$ while quark angles are small; quarks are constrained by the Manifold Drag ($\pi$), while neutrinos are constrained only by the Topology ($\chi$).
+
+
+
+\CatchFileBetweenTags{\AlphaInvVal}{calculations/constants.tex}{AlphaInvVal}
+
+\CatchFileBetweenTags{\ReactorAngleVal}{calculations/flavor_geometry.tex}{ReactorAngleVal}
+\CatchFileBetweenTags{\ReactorAngleEq}{calculations/flavor_geometry.tex}{ReactorAngleEq}
+\CatchFileBetweenTags{\ReactorAngleExperimentalValue}{calculations/flavor_geometry.tex}{ReactorAngleExperimentalValue}
+\CatchFileBetweenTags{\ReactorAngleAccText}{calculations/flavor_geometry.tex}{ReactorAngleAccText}
 
 \subsection{The Reactor Angle (\texorpdfstring{$\theta_{13}$}{theta13}): The Interaction Leak}
 
@@ -113,18 +126,19 @@ Neutrino Phase ($\delta_{PMNS}$) & Golden Angle ($2\pi / \phi$) & $222.5^{\circ}
 
 \begin{itemize}
     \item \textbf{Numerator ($\sigma - \chi = 3$):} The \textbf{Interaction Remainder} derived in Paper I. This is the specific structural invariant that mandates exactly three quark colors and three fermion generations.
-    \item \textbf{Denominator ($\alpha^{-1} \approx 137$):} The Vacuum Impedance.
+    \item \textbf{Denominator ($\alpha^{-1} \approx \AlphaInvVal$):} The Vacuum Impedance.
 \end{itemize}
 
 \begin{equation}
-\sin^2 \theta_{13} = \frac{\sigma - \chi}{\alpha^{-1}} = \frac{3}{137.036} \approx \mathbf{0.02189}
+\sin^2 \theta_{13} = \ReactorAngleEq = \frac{3}{\AlphaInvVal} \approx \mathbf{\ReactorAngleVal}
 \end{equation}
 
 \begin{itemize}
-    \item \textbf{Experimental Target (NuFIT 5.3):} $0.0220 \pm 0.0006$
-    \item \textbf{Accuracy:} 99.5\%
-    \item \textbf{Physical Meaning:} The Reactor angle quantifies the structural cross-talk between the Color Sector (3) and the Vacuum Field ($\alpha^{-1}$). It proves that the ``3" appearing in the PMNS matrix is the same ``3" that defines the number of generations and colors, linked by the global coherence of the lattice phonon.
+    \item \textbf{Experimental Target:} \ReactorAngleExperimentalValue
+    \item \textbf{Accuracy:} \ReactorAngleAccText
 \end{itemize}
+
+\textbf{Physical Meaning:} The Reactor angle quantifies the structural cross-talk between the Color Sector (3) and the Vacuum Field ($\alpha^{-1}$). It proves that the ``3" appearing in the PMNS matrix is the same ``3" that defines the number of generations and colors, linked by the global coherence of the lattice phonon.
 
 The complete derivation of the neutrino sector is summarized in Table \ref{tab:pmns_derivation}. The agreement across all four parameters ($\theta_{12}, \theta_{23}, \theta_{13}, \delta_{CP}$) confirms that the PMNS matrix is not random, but follows the harmonic resonance logic of the $E_8$ substrate.
 
