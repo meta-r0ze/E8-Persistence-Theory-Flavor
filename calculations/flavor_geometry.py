@@ -314,10 +314,9 @@ def main():
     delta_nu = 360.0 / PHI
 
     print_derivation("Solar (12)", "SolarAngle", r"\frac{1}{2\phi}", sin2_12, "theta_12_sin2", "", args.latex)
-    # Change ref_key from "theta_23_sin2_sym" to "theta_23_sin2" 
-    # IF you want to see the 4.6 sigma deviation displayed.
-    # Otherwise, keep as is to show consistency with the "Maximal Mixing" theory.
-    print_derivation("Atmos (23)", "AtmosAngle", r"\frac{1}{\chi}", sin2_23, "theta_23_sin2_sym", "", args.latex)
+    # Showing the 4.6 sigma deviation
+    # Change ref_key from "theta_23_sin2" to "theta_23_sin2_sym to show consistency with the "Maximal Mixing" theory.
+    print_derivation("Atmos (23)", "AtmosAngle", r"\frac{1}{\chi}", sin2_23, "theta_23_sin2", "", args.latex)
     print_derivation("Reactor (13)", "ReactorAngle", r"\frac{\sigma - \chi}{\alpha^{-1}}", sin2_13, "theta_13_sin2", "", args.latex)
     print_derivation("Nu CP Phase", "NuCP", r"\frac{360^{\circ}}{\phi}", delta_nu, "delta_cp_neutrino", "\\degree", args.latex)
 
