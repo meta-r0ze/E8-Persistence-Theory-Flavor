@@ -1,0 +1,17 @@
+=== Test 1: Relativistic Kinematics (Lattice Corrected) ===
+[m=0.0] Theory v_g: 0.9553 | Measured: 0.9547 | Error: 0.06%
+[m=0.2] Theory v_g: 0.7912 | Measured: 0.7858 | Error: 0.67%
+[m=0.5] Theory v_g: 0.4861 | Measured: 0.4831 | Error: 0.62%
+
+=== Test 2: Chiral Mixing Frequency ===
+Theoretical Freq (2m): 0.50000
+Measured Freq (Fit):   0.50264
+Agreement:             0.529%
+
+=== Test 3: Total Hamiltonian Conservation & Dispersion ===
+Exact Lattice Energy: 0.42007
+Computed Energy:      0.42098
+Initialization Match: 0.216%
+Energy Drift (Stability): 0.0000%
+
+=== Test 4: Generating Relativistic Mass-Velocity Curve ===
