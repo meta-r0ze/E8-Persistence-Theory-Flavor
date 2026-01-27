@@ -1,8 +1,8 @@
 \section{The CKM Unitary Matrix Representation: Full Generational Consistency}
 
-In standard particle physics, the unitarity of the CKM matrix is a fundamental postulate. In the $E_8$-Persistence Theory, this conservation is a physical consequence of State Saturation.
+In the Standard Model, the unitarity of the CKM matrix is a mathematical requirement for probability conservation, valid only if the assumed number of generations is complete.  In the $E_8$-Persistence Theory, this conservation is structurally enforced by State Saturation. Because the lattice capacity is strictly limited to $v=16$ chiral channels, the closure of the 3-generation system is not an assumption, but a physical hardware limit.
 
-Because the total causal flow is restricted to the 16 chiral channels of the $E_8$ substrate, the information density cannot exceed unity. Probability conservation is enforced by the State Space Limit. Consequently, the sum of Persistence probability (authorized tier stability) and Leakage probability (interface shifts) must equate to exactly $1.0$ for each generational row and column. This Unitary Solvency ensures that the ``Standard Model" software remains synchronized with the available chiral density.
+Because the total causal flow is restricted to the 16 chiral channels of the $E_8$ substrate, the information density cannot exceed unity. Probability conservation is enforced by the State Space Limit. Consequently, the sum of Persistence probability (authorized tier stability) and Leakage probability (interface shifts) must equate to exactly $1.0$ for each generational row and column. This Unitary Solvency ensures that the Standard Model software remains synchronized with the available chiral density.
 
 \subsection{The Full CKM Derivation Table (Magnitudes)}
 
@@ -98,22 +98,15 @@ $t \to b$ & $V_{tb}$ & Unitary Persistence ($\VtbEq$) & \textbf{\VtbVal} & \VtbE
 \end{table*}
 
 
-
-% --- Load Full Matrix Tags ---
-\CatchFileBetweenTags{\VcdVal}{calculations/flavor_geometry.tex}{VcdVal}
-\CatchFileBetweenTags{\VtdVal}{calculations/flavor_geometry.tex}{VtdVal}
-\CatchFileBetweenTags{\VtsVal}{calculations/flavor_geometry.tex}{VtsVal}
-\CatchFileBetweenTags{\VtbVal}{calculations/flavor_geometry.tex}{VtbVal}
-
 \subsection{The Unitary Matrix Representation}
 
 The following matrix represents the global equilibrium of the flavor sector. Diagonal elements represent Persistence Efficiency, which scales super-linearly with the resonance tier.
 
 \begin{equation}
-|V_{CKM}| = 
+|V_{CKM}| =
 \begin{pmatrix}
 \VudVal & \CabibboSineVal & \VubVal \\
-\CabibboSineVal & \VcsVal & \VcbVal \\
+\VcdVal & \VcsVal & \VcbVal \\
 \VtdVal & \VtsVal & \VtbVal
 \end{pmatrix}
 \end{equation}

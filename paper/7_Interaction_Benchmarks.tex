@@ -1,35 +1,87 @@
-\section{Systemic Interaction Benchmarks}
-
 % --- Load GST Tags ---
-\CatchFileBetweenTags{\WeakAngleVal}{calculations/constants.tex}{WeakAngleVal}
-\CatchFileBetweenTags{\GSTDiffVal}{calculations/flavor_geometry.tex}{GSTDiffVal}
+\CatchFileBetweenTags{\UnityGapVal}{calculations/flavor_geometry.tex}{UnityGapVal}
+\CatchFileBetweenTags{\UnityGapEq}{calculations/flavor_geometry.tex}{UnityGapEq}
 \CatchFileBetweenTags{\GSTGapPct}{calculations/flavor_geometry.tex}{GSTGapPct}
 
-\subsection{The GST Relation: Geometric Basis}
-The Gatto-Sartori-Tonin (GST) relation conceptually links the gauge sector to the flavor sector. In the $E_8$-Persistence theory, this is not an algebraic coincidence but a consequence of the single finite capacity of the lattice being allocated simultaneously to Forces and Masses.
+\section{The Gauge-Flavor-Mass Connection}
 
-We compare the Gauge Partition (derived in Paper I) to the Flavor Aperture (applied in Section III):
+\subsection{Validating Geometric Impedance Matching}
 
+\subsubsection{The Historical GST Puzzle}
+In 1968, Gatto, Sartori, and Tonin observed an empirical relation connecting flavor mixing to mass hierarchies \cite{gatto_weak_1968}:
 \begin{equation}
-\text{Paper I (Forces):} \quad \sin^2 \theta_W = \frac{\Delta}{N_{sys}} \approx \textbf{\WeakAngleVal}
+    \sin \theta_C \approx \sqrt{\frac{m_d}{m_s}}
+    \label{eq:gst_empirical}
 \end{equation}
+This relation is \textbf{not predicted} by the Standard Model. Since the Cabibbo angle and quark masses are independent inputs in the Lagrangian, their numerical agreement ($\sim 0.22$) has historically been treated as a coincidence or a hint of texture zeros in the mass matrices. No mechanism within the SM explains \textit{why} a mixing angle should lock to a mass ratio.
+
+\subsubsection{Geometric Prediction}
+In our framework, the Cabibbo angle is not a free parameter but a geometric property of the chiral aperture, derived in Section III:
 \begin{equation}
-\text{Paper III (Flavor):} \quad \sin \theta_C = \frac{\pi}{\nu - \chi} \approx \textbf{\CabibboSineVal}
+    \sin \theta_C = \frac{\pi}{\nu - \chi} = \frac{\pi}{14} \approx \CabibboSineVal
 \end{equation}
+This aperture $\theta_C$ defines the maximum information bandwidth available for transitions between the first and second generation (the Chiral Leak).
 
-\subsubsection{Physical Interpretation: The Unified Partition}
-We observe that the linear aperture of flavor mixing is almost equal to the quadratic partition of force mixing. The magnitude of the difference quantifies the structural distinction between the two sectors:
+\subsubsection{The Impedance Matching Principle}
+We propose that the vacuum operates as an optimized information channel. For a transition between mass eigenstates $m_i$ and $m_j$ through a geometric aperture $\theta$, minimizing signal reflection (informational loss) requires \textbf{Impedance Matching}.
 
+In the limit of a chiral lattice interface, the transmission coefficient $T$ relates to the kinematic impedance (mass) ratio:
 \begin{equation}
-|\sin \theta_C - \sin^2 \theta_W| \approx \textbf{\GSTDiffVal} \quad (\textbf{\GSTGapPct\%})
+    \mathcal{T} \approx \sin^2 \theta \quad \text{and} \quad \frac{Z_1}{Z_2} \approx \frac{m_d}{m_s}
+\end{equation}
+Maximum power transfer occurs when the coupling geometry matches the geometric mean of the impedances:
+\begin{equation}
+\boxed{
+    \theta_{optimal} \approx \sqrt{\frac{m_{light}}{m_{heavy}}}
+}
+\label{eq:impedance_matching}
+\end{equation}
+In the $E_8$-Persistence framework, the aperture $\theta_C$ is fixed by the lattice topology ($\pi/14$). Therefore, to maintain a persistent vacuum state, the \textbf{quark masses must self-organize} to satisfy this ratio.
+
+\subsubsection{Experimental Validation}
+We test this hypothesis by comparing our geometric angle to the latest Lattice QCD mass determinations (PDG 2024 \cite{navas_review_2024}).
+
+\paragraph{The Geometric Aperture:}
+\begin{equation}
+    \text{Predicted: } \sin\theta_C = \frac{\pi}{14} \approx \CabibboSineVal
 \end{equation}
 
-This slight divergence ($<0.7\%$) is not a failure of unification, but a measure of the \textbf{Geometric Entropy} of the partition.
+\paragraph{The Mass Impedance:}
+Using the MS-bar masses at scale $\mu = 2$ GeV:
 \begin{itemize}
-    \item $\theta_C$ is defined by a \textbf{Linear Aperture} (Interface/Width) acting on currents.
-    \item $\theta_W$ is defined by a \textbf{Volumetric Capacity} (Resonance/Volume) acting on charges.
+    \item Down quark: $m_d = 4.67 \pm 0.09$ MeV
+    \item Strange quark: $m_s = 93.4 \pm 0.8$ MeV
 \end{itemize}
-The fact that these two distinct geometric operations yield nearly identical values confirms they are shadows of the same underlying lattice constraint ($\approx 0.223$), allocated against the topological boundary cost.
+\begin{equation}
+    \sqrt{\frac{m_d}{m_s}} = \sqrt{\frac{4.67}{93.4}} = 0.2236 \pm 0.0025
+\end{equation}
+
+\begin{table}[h]
+\centering
+\caption{\textbf{Validation of GST Impedance Matching.} The lattice aperture ($\pi/14$) correctly predicts the mass hierarchy of the light quarks.}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Observable} & \textbf{Value} & \textbf{Source} & \textbf{Agreement} \\
+\midrule
+Geometric Aperture ($\sin\theta_C$) & $\mathbf{0.2244}$ & Theory ($\pi/14$) & -- \\
+Mass Impedance ($\sqrt{m_d/m_s}$) & $\mathbf{0.2236}$ & PDG Data & $\mathbf{0.4\%}$ \\
+\bottomrule
+\end{tabular}
+\label{tab:gst_validation}
+\end{table}
+
+\subsubsection{Physical Interpretation}
+The agreement to within $0.4\%$ (well within the theoretical and experimental uncertainties) demonstrates that \textbf{quark masses are not arbitrary}. The mass hierarchy $m_d/m_s$ is structurally locked to the geometric aperture $\pi/14$.
+
+This implies a reversal of the standard cause-and-effect relationship:
+\begin{enumerate}
+    \item \textbf{Standard Model:} Masses are input parameters; mixing is measured empirically.
+    \item \textbf{$E_8$-Persistence:} The Mixing Angle is fixed by geometry ($\pi/14$). The Masses settle into the ratio $\sqrt{m_d/m_s} \approx 0.224$ because that is the only configuration that allows lossless information flow through the provided aperture.
+\end{enumerate}
+
+\textit{Note on Heavy Quarks:} This specific square-root relation applies to the Chiral Aperture (Gen 1-2). Transitions involving the third generation (e.g., $c \to b$) are governed by the Dimensional Shift mechanism (Section II.A), which introduces vacuum impedance terms ($\alpha^{-1}$) that modify the simple impedance matching condition.
+
+
 
 
 % --- Load J Consistency Tags ---
@@ -37,7 +89,7 @@ The fact that these two distinct geometric operations yield nearly identical val
 % Note: Ensure \EntropicCostVal is defined (usually TgeoVal from Paper I) or use explicit value if needed.
 % For this snippet, assuming TgeoVal is loaded or hardcoded from context.
 
-\subsection{Structural Resonance: The Golden Cost of Time}
+\section{Structural Resonance: The Golden Cost of Time}
 We observe a striking geometric relationship between the magnitude of CP Violation ($J_{CKM}$, derived via the matrix product) and the Vacuum Temporal Tax ($T_{geo}$, derived in Paper I via lattice entropy).
 
 We propose the exact structural identity linking the 4D manifold to the 8D lattice metabolic cost:
@@ -50,5 +102,5 @@ Comparing the matrix-derived value ($J_{CKM}$) to this geometric prediction ($J_
     \Delta_J = \frac{|J_{CKM} - J_{geo}|}{J_{geo}} \approx \textbf{\JConsistencyPct\%}
 \end{equation}
 
-\subsubsection{Physical Interpretation}
+\subsection{Physical Interpretation}
 The agreement to within $\approx 2\%$ confirms that Time Asymmetry is not an accidental parameter. Just as a 3D object casts a 2D shadow, the metabolic cost ($T$) of the 8D lattice casts a ``Golden Shadow'' onto the 4D manifold. That shadow is CP violation ($J$). The factor $\phi^2 \approx 2.618$ represents the holographic projection of the 5-fold symmetry ($\sigma=5$) onto the causal axis.

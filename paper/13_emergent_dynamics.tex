@@ -58,14 +58,16 @@ The observed ``running" of coupling constants is the result of \textbf{Scale-Dep
 \end{equation}
 Here, the beta function coefficient $\beta_0 = 11 - \frac{2}{3}n_f$ is not a quantum loop correction, but the \textbf{Geometric Stiffness} of the lattice, describing how the available channel capacity ($N_{eff}$) scales with resolution. 
 
-\section{Emergent Dynamics (The Lattice Update)}
-\label{sec:EmergentDynamics}
+\section{Emergent Dynamics Audit}
 
-The derivations in this work establish the static boundary conditions of the vacuum. To demonstrate that these boundaries dictate the correct dynamic evolution, we performed an \textit{ab initio} computational audit of the discrete lattice evolution.
+To demonstrate that these boundaries dictate the correct dynamic evolution, we performed an \textit{ab initio} computational audit of the discrete lattice evolution.
 
 We simulated a 1D spinor field $\psi = (\psi_L, \psi_R)^T$ on a 400-node lattice governed strictly by the Kirchhoff Update Rule derived in Eq. (B1). The system was evolved using a fourth-order Runge-Kutta (RK4) integration scheme to ensure numerical stability. The simulation source code is available as Supplementary Material.
 
 \subsection{Audit I: Relativistic Kinematics}
+% TODO: 
+%Standard Physics: Starts with the Dirac Lagrangian (a mathematical axiom written on paper) and solves differential equations.
+%These Simulations: Starts with The Kirchhoff Rule (a neighbor-swapping rule on a discrete grid) ala time rules from e8 and shows that it behaves like the Dirac equation.
 
 We tested the propagation of a Gaussian wave packet initialized with momentum $k=0.3$. In standard continuum mechanics, the group velocity is given by $v_g = p/E$. On a discrete lattice, the dispersion relation is modified by the grid geometry:
 \begin{equation}
@@ -103,9 +105,9 @@ We initialized a scalar potential landscape $V(x,y)$ representing one Oxygen and
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.48\textwidth]{lattice_water_audit.png}
-\caption{\textbf{The Geometry of Chemistry.} A numerical simulation of the $H_2O$ molecular orbital on the $E_8$ substrate. The image visualizes the phase-density map of the spinor field after 1000 time steps. Note the spontaneous formation of \textbf{Flux Bridges} (Covalent Bonds) connecting the nuclei. This demonstrates that "chemical bonding" is not a separate physical law, but the inevitable result of the electron fluid minimizing entropic action across the geometric impedance of the lattice potential.}
+\includegraphics[width=0.48\textwidth]{calculations/lattice_water_audit.png}
+\caption{\textbf{The Geometry of Chemistry.} A numerical simulation of the $H_2O$ molecular orbital on the $E_8$ substrate. The image visualizes the phase-density map of the spinor field after 1000 time steps. Note the spontaneous formation of \textbf{Flux Bridges} (Covalent Bonds) connecting the nuclei. This demonstrates that ``chemical bonding" is not a separate physical law, but the inevitable result of the electron fluid minimizing entropic action across the geometric impedance of the lattice potential.}
 \label{fig:water_audit}
 \end{figure}
 
-The simulation (Fig. \ref{fig:water_audit}) confirms that the discrete substrate naturally supports complex, delocalized topological closures. The electron density does not scatter or dissipate; it self-organizes into low-impedance flux channels connecting the potential wells. This validates that the "Geometric Impedance" logic used to derive the CKM matrix is applicable to all scales of physical organization.
+The simulation (Fig. \ref{fig:water_audit}) confirms that the discrete substrate naturally supports complex, delocalized topological closures. The electron density does not scatter or dissipate; it self-organizes into low-impedance flux channels connecting the potential wells. This validates that the ``Geometric Impedance" logic used to derive the CKM matrix is applicable to all scales of physical organization.
