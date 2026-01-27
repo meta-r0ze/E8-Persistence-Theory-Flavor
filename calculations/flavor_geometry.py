@@ -241,17 +241,21 @@ def main():
     CKM = [[Vud, Vus, Vub], [Vcd, Vcs, Vcb], [Vtd, Vts, Vtb]]
 
     # --- 3. OUTPUTS: MATRIX ---
+    # Primary Inputs
     print_derivation("Vus (Cabibbo)", "CabibboSine", r"\frac{\pi}{\nu - \chi}", mag(Vus), "vus", "", args.latex)
     print_derivation("Vcb (Dimensional)", "Vcb", r"\frac{\pi + \chi}{\alpha^{-1} - D\pi}", mag(Vcb), "vcb", "", args.latex)
     print_derivation("Vub (Tunneling)", "Vub", r"\frac{1}{\chi\alpha^{-1} + \pi}", mag(Vub), "vub", "", args.latex)
     print_derivation("CP Phase", "CPPhase", r"\arctan\left(\frac{\sigma}{\chi}\right)", delta_deg, "delta_cp", "\\degree", args.latex)
 
+    # Derived Diagonal Elements (Unitary Persistence)
     print_derivation("Derived: Vud", "Vud", r"\sqrt{1 - |V_{us}|^2 - |V_{ub}|^2}", mag(Vud), "vud", "", args.latex)
     print_derivation("Derived: Vcs", "Vcs", r"\sqrt{1 - |V_{cd}|^2 - |V_{cb}|^2}", mag(Vcs), "vcs", "", args.latex)
-    print_derivation("Derived: Vcd", "Vcd", r"|V_{us}| + \dots", mag(Vcd), "vcd", "", args.latex)
+    print_derivation("Derived: Vtb", "Vtb", r"\sqrt{1 - |V_{td}|^2 - |V_{ts}|^2}", mag(Vtb), "vtb", "", args.latex)
+
+    # Derived Off-Diagonal Elements (Interference)
+    print_derivation("Derived: Vcd", "Vcd", r"|-s_{12}c_{23} - c_{12}s_{23}s_{13}e^{i\delta}|", mag(Vcd), "vcd", "", args.latex)
     print_derivation("Derived: Vtd", "Vtd", r"|s_{12}s_{23} - c_{12}c_{23}s_{13}e^{i\delta}|", mag(Vtd), "vtd", "", args.latex)
     print_derivation("Derived: Vts", "Vts", r"|-c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta}|", mag(Vts), "vts", "", args.latex)
-    print_derivation("Derived: Vtb", "Vtb", r"\sqrt{1 - |V_{td}|^2 - |V_{ts}|^2}", mag(Vtb), "vtb", "", args.latex)
 
     J_exact = validate_jarlskog_invariance(CKM, args.latex)
     print_derivation("Jarlskog Inv", "JarlskogMatrix", r"\Im(V_{ud} V_{cs} V_{us}^* V_{cd}^*)", J_exact, "jarlskog", "", args.latex)
@@ -327,7 +331,7 @@ def main():
     diff_gst = abs(mag(Vus) - sin2_w)
     gst_gap_pct = (diff_gst / sin2_w) * 100
     if args.latex:
-        print_latex_tag("GSTDiffVal", f"{diff_gst:.5f}")
+        print_derivation("Gauge-Flavor Unity", "UnityGap", r"|\sin\theta_C - \sin^2\theta_W|", diff_gst, "unity_gap", "", args.latex)
         print_latex_tag("GSTGapPct", f"{gst_gap_pct:.3f}")
     else:
         print(f"\n--- GST Check ---")
