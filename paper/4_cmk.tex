@@ -69,33 +69,47 @@ Consequently, Flavor Mixing angles are derived as \textbf{Exact Geometric Ratios
 \CatchFileBetweenTags{\VtbExp}{calculations/flavor_geometry.tex}{VtbExperimentalValue}
 \CatchFileBetweenTags{\VtbSig}{calculations/flavor_geometry.tex}{VtbSigma}
 
+\CatchFileBetweenTags{\CPPhaseEq}{calculations/flavor_geometry.tex}{CPPhaseEq}
+
 \begin{table*}[h]
 \centering
-\caption{\textbf{Derivation of CKM Matrix Elements.} Comparison of geometric predictions (System III) against PDG 2024 global fit values. Note that $V_{td}$ and $V_{ts}$ are derived via destructive interference involving the CP phase $\delta \approx 68^\circ$, explaining their suppression without arbitrary parameters.}
+\caption{\textbf{Derivation of CKM Matrix Elements.} 
+Comparison of geometric predictions (System III) against PDG 2024 global fit values. 
+The upper section lists the calculated matrix elements. The lower section defines the \textbf{Geometric Basis} ($s_{ij} = \sin \theta_{ij}, c_{ij} = \cos \theta_{ij}$) derived directly from the lattice invariants. Note that the suppression of $V_{td}$ and $V_{ts}$ arises from \textbf{Geometric Interference} between these basis vectors, not parameter tuning.}
 \label{tab:ckm_derivation}
-\renewcommand{\arraystretch}{1.8} 
-\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.7} 
+\setlength{\tabcolsep}{6pt}
 \begin{tabular}{@{} l l l c c r @{}} 
 \toprule
 \textbf{Transition} & \textbf{Elem.} & \textbf{Geometric Logic / Formula} & \textbf{Predicted} & \textbf{Target (PDG)} & \textbf{Dev.} \\
 \midrule
-\multicolumn{6}{l}{\textit{Generation 1 (Chiral Aperture)}} \\
-$u \to d$ & $V_{ud}$ & Unitary Persistence ($\VudEq$) & \textbf{\VudVal} & \VudExp & $\VudSig\sigma$ \\
-$u \to s$ & $V_{us}$ & Cabibbo Aperture ($\CabibboSineEq$) & \textbf{\CabibboSineVal} & \CabibboSineExp & $-\CabibboSineSig\sigma$ \\
-$u \to b$ & $V_{ub}$ & Quantum Tunneling ($\VubEq$) & \textbf{\VubVal} & \VubExp & $-\VubSig\sigma$ \\
+\multicolumn{6}{l}{\textit{Generation 1 (Geometric Inputs)}} \\
+$u \to d$ & $V_{ud}$ & Unitary Persistence ($c_{12}c_{13}$) & \textbf{\VudVal} & \VudExp & $\VudSig\sigma$ \\
+$u \to s$ & $V_{us}$ & Cabibbo Aperture ($s_{12}c_{13}$) & \textbf{\CabibboSineVal} & \CabibboSineExp & $-\CabibboSineSig\sigma$ \\
+$u \to b$ & $V_{ub}$ & Quantum Tunneling ($s_{13}e^{-i\delta}$) & \textbf{\VubVal} & \VubExp & $-\VubSig\sigma$ \\
 \midrule
-\multicolumn{6}{l}{\textit{Generation 2 (Dimensional Shift)}} \\
-$c \to d$ & $V_{cd}$ & Unitary Reflection ($\VcdEq$) & \textbf{\VcdVal} & \VcdExp & $-\VcdSig\sigma$ \\
-$c \to s$ & $V_{cs}$ & Unitary Persistence ($\VcsEq$) & \textbf{\VcsVal} & \VcsExp & $+\VcsSig\sigma$ \\
-$c \to b$ & $V_{cb}$ & Manifold Drag ($\VcbEq$) & \textbf{\VcbVal} & \VcbExp & $+\VcbSig\sigma$ \\
+\multicolumn{6}{l}{\textit{Generation 2 (Derived via Unitarity)}} \\
+$c \to d$ & $V_{cd}$ & Unitary Reflection ($-s_{12}c_{23} - c_{12}s_{23}s_{13}e^{i\delta}$) & \textbf{\VcdVal} & \VcdExp & $-\VcdSig\sigma$ \\
+$c \to s$ & $V_{cs}$ & Unitary Persistence ($c_{12}c_{23} - s_{12}s_{23}s_{13}e^{i\delta}$) & \textbf{\VcsVal} & \VcsExp & $+\VcsSig\sigma$ \\
+$c \to b$ & $V_{cb}$ & Dimensional Shift ($s_{23}c_{13}$) & \textbf{\VcbVal} & \VcbExp & $+\VcbSig\sigma$ \\
 \midrule
-\multicolumn{6}{l}{\textit{Generation 3 (Interference \& Closure)}} \\
-$t \to d$ & $V_{td}$ & Phase Interference ($\VtdEq$) & \textbf{\VtdVal} & \VtdExp & $+\VtdSig\sigma$ \\
-$t \to s$ & $V_{ts}$ & Phase Interference ($\VtsEq$) & \textbf{\VtsVal} & \VtsExp & $+\VtsSig\sigma$ \\
-$t \to b$ & $V_{tb}$ & Unitary Persistence ($\VtbEq$) & \textbf{\VtbVal} & \VtbExp & $-\VtbSig\sigma$ \\
+\multicolumn{6}{l}{\textit{Generation 3 (Derived via Interference)}} \\
+$t \to d$ & $V_{td}$ & Destructive Interference ($s_{12}s_{23} - c_{12}c_{23}s_{13}e^{i\delta}$) & \textbf{\VtdVal} & \VtdExp & $+\VtdSig\sigma$ \\
+$t \to s$ & $V_{ts}$ & Phase Interference ($-c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta}$) & \textbf{\VtsVal} & \VtsExp & $+\VtsSig\sigma$ \\
+$t \to b$ & $V_{tb}$ & Unitary Persistence ($c_{23}c_{13}$) & \textbf{\VtbVal} & \VtbExp & $-\VtbSig\sigma$ \\
+\midrule
+\midrule
+\multicolumn{6}{c}{\textbf{Geometric Basis Parameters (Inputs)}} \\
+\multicolumn{2}{l}{\textbf{Parameter}} & \textbf{Geometric Source} & \textbf{Value} & \textbf{Physical Meaning} & \\
+\multicolumn{2}{l}{$s_{12}$ (Solar/Cabibbo)} & $\CabibboSineEq$ & \CabibboSineVal & Interface Aperture & \\
+\multicolumn{2}{l}{$s_{13}$ (Reactor)} & $\VubEq$ & \VubVal & Quantum Tunneling & \\
+\multicolumn{2}{l}{$s_{23}$ (Atmospheric)} & $\VcbEq$ & \VcbVal & Dimensional Drag & \\
+\multicolumn{2}{l}{$\delta$ (CP Phase)} & $\CPPhaseEq$ & $\CPPhaseVal$ & Chiral Diode Offset & \\
 \bottomrule
 \end{tabular}
 \end{table*}
+
+
 
 
 \subsection{The Unitary Matrix Representation}

@@ -9,6 +9,10 @@ The derivations in this work establish the static boundary conditions of the vac
 Time is treated as a discrete clock cycle defined by the fundamental resonance $\Delta$. The state of a node $\psi(x, t)$ updates based on the flux from its geometric neighbors.
 
 \textbf{Step 1: The Kirchhoff Update Rule} \\
+% todo?  make the python equations appear here rather than manually typeing in.
+
+We postulate a unitary update rule based on the conservation of information flux, analogous to Kirchhoff's Current Law in network theory. This approach is formally equivalent to a Quantum Lattice Gas Automaton (QLGA)\cite{meyer_quantum_1996} or the discrete Feynman Checkerboard model \cite{feynman_quantum_1965}, extended here to the $E_8$ geometry.
+
 Let the update be the sum of inflows from the chiral lattice vectors $e_k$. We define the discrete evolution as:
 \begin{equation}
 \begin{split}
@@ -16,6 +20,7 @@ Let the update be the sum of inflows from the chiral lattice vectors $e_k$. We d
     & - i \mathcal{A} \sum_{k=1}^{3} \left( \psi(x + e_k \delta x, t) - \psi(x - e_k \delta x, t) \right) \\
     & - i m \psi(x, t) \\
 \end{split}
+\label{eq:KirchhoffUpdateRule}
 \end{equation}
 Where $\mathcal{A}$ is the vacuum admittance (coupling strength) and $m$ is the mass impedance.
 
@@ -47,7 +52,7 @@ The jump from lattice vectors $e_k$ to Dirac matrices $\gamma^\mu$ requires just
     \{e_\mu, e_\nu\} \equiv e_\mu e_\nu + e_\nu e_\mu = 2g_{\mu\nu}
 \end{equation}
 
-where $g_{\mu\nu} = \text{diag}(-1,+1,+1,+1)$ is the Lorentzian metric derived in Paper I. This anticommutation relation is precisely the defining property of the Dirac gamma matrices. Thus, the lattice geometry does not merely \textit{map} to the Dirac equation; it structuraly \textit{is} the Clifford algebra.
+where $g_{\mu\nu} = \text{diag}(-1,+1,+1,+1)$ is the Lorentzian metric derived in Paper I. This anti-commutation relation is precisely the defining property of the Dirac gamma matrices. Thus, the lattice geometry does not merely \textit{map} to the Dirac equation; it structurally \textit{is} the Clifford algebra.
 
 \subsection{Renormalization as Resolution}
 Standard Quantum Field Theory requires renormalization to handle infinite integrals at small scales. In the $E_8$-Persistence framework, the lattice spacing $\ell_P$ provides a natural, physical Ultraviolet Cutoff ($\Lambda_{UV} \sim M_P$).
@@ -62,7 +67,7 @@ Here, the beta function coefficient $\beta_0 = 11 - \frac{2}{3}n_f$ is not a qua
 
 To demonstrate that these boundaries dictate the correct dynamic evolution, we performed an \textit{ab initio} computational audit of the discrete lattice evolution.
 
-We simulated a 1D spinor field $\psi = (\psi_L, \psi_R)^T$ on a 400-node lattice governed strictly by the Kirchhoff Update Rule derived in Eq. (B1). The system was evolved using a fourth-order Runge-Kutta (RK4) integration scheme to ensure numerical stability. The simulation source code is available as Supplementary Material.
+We simulated a 1D spinor field $\psi = (\psi_L, \psi_R)^T$ on a 400-node lattice governed strictly by the Kirchhoff Update Rule derived in Eq. (\cref{eq:KirchhoffUpdateRule}). The system was evolved using a fourth-order Runge-Kutta (RK4) integration scheme to ensure numerical stability. The simulation source code is available as Supplementary Material.
 
 \subsection{Audit I: Relativistic Kinematics}
 % TODO: 
@@ -73,7 +78,7 @@ We tested the propagation of a Gaussian wave packet initialized with momentum $k
 \begin{equation}
     v_{lattice} = \frac{\sin(k)\cos(k)}{\sqrt{\sin^2(k) + m^2}}
 \end{equation}
-The simulation recovered this exact lattice-corrected relativistic velocity to within $0.06\%$ for massless particles and $0.6\%$ for massive particles ($m=0.5$). This confirms that Lorentz invariance emerges naturally in the long-wavelength limit ($k \ll 1$), and that the "Manifold Quantization Efficiency" ($\eta$) is a real feature of discrete transport.
+The simulation recovered this exact lattice-corrected relativistic velocity to within $0.06\%$ for massless particles and $0.6\%$ for massive particles ($m=0.5$). This confirms that Lorentz invariance emerges naturally in the long-wavelength limit ($k \ll 1$), and that the ``Manifold Quantization Efficiency" ($\eta$) is a real feature of discrete transport.
 
 \subsection{Audit II: Mass as Chiral Impedance}
 

@@ -2,6 +2,8 @@
 
 
 \section{Foundational Principles of Flavor Mixing Dynamics}
+We now apply this same topological simplicity to the disparate mixing angles of the flavor sector.
+
 To maintain persistence, the lattice enforces topological constraints on signal propagation derived from the invariants $\mathbb{S} = \{D=4, \Delta=43, \nu=16, \sigma=5, \chi=2\}$ established in Paper I:
 
 \begin{enumerate}
@@ -42,13 +44,17 @@ This transition occurs between adjacent linear resonance tiers. As derived in Pa
     \item \textbf{Accuracy:} \CabibboSineAccText
 \end{itemize}
 
+
+\CatchFileBetweenTags{\VcbEq}{calculations/flavor_geometry.tex}{VcbEq}
+\CatchFileBetweenTags{\VubEq}{calculations/flavor_geometry.tex}{VubEq}
+
 \subsubsection{Type II: Field Shift (Dimensional Promotion)}
 \textbf{Applies to:} $c \to b$ (Gen 2 $\to$ Gen 3)
 
-This transition represents a dimensional promotion from an Areal ($\Delta^2$) to a Volumetric ($\Delta^3$) resonance. The interface energy includes both the circular manifold projection ($\pi$) and the topological stress of the boundary deformation ($\chi$). The impedance is provided by the vacuum coupling ($\alpha^{-1}$), adjusted for the manifold drag ($D\pi$) inherent to the 4D projection.
+This transition represents a dimensional promotion from an Areal ($\Delta^2$) to a Volumetric ($\Delta^3$) resonance. The interface energy includes both the circular manifold projection ($\pi$) and the topological stress of the boundary deformation ($\chi$). The impedance is provided by the vacuum coupling ($\alpha^{-1}$), adjusted for the Manifold Drag ($D\pi$) inherent to the 4D projection.
 
 \begin{equation}
-|V_{cb}| = \frac{\pi + \chi}{\alpha^{-1} - D\pi}
+|V_{cb}| = \VcbEq
 \end{equation}
 
 This mechanism explains the suppression of $V_{cb}$ relative to $V_{us}$; the engagement of the vacuum field impedance ($\alpha^{-1}$) provides significantly higher resistance than the chiral channels alone.
@@ -59,7 +65,7 @@ This mechanism explains the suppression of $V_{cb}$ relative to $V_{us}$; the en
 A direct transition from the ground state ($\Delta^0$) to the volumetric tier ($\Delta^2$) without traversing the intermediate tier is geometrically forbidden as a continuous path. This transition occurs via a discrete quantum tunneling event, carrying a 1-bit interface cost ($E=1$). The impedance is maximal, combining the boundary-locked field coupling ($\chi\alpha^{-1}$) and the manifold barrier ($\pi$).
 
 \begin{equation}
-|V_{ub}|^2 = \frac{1}{\chi \alpha^{-1} + \pi}
+|V_{ub}| = \VubEq
 \end{equation}
 
 This results in the severe suppression observed in the off-diagonal corners of the CKM matrix.

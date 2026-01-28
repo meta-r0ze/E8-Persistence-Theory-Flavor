@@ -61,7 +61,7 @@ Using the MS-bar masses at scale $\mu = 2$ GeV:
 \caption{\textbf{Validation of GST Impedance Matching.} The lattice aperture ($\pi/14$) correctly predicts the mass hierarchy of the light quarks.}
 \begin{tabular}{lccc}
 \toprule
-\textbf{Observable} & \textbf{Value} & \textbf{Source} & \textbf{Agreement} \\
+\textbf{Observable} & \textbf{Value} & \textbf{Source} & \textbf{Error} \\
 \midrule
 Geometric Aperture ($\sin\theta_C$) & $\mathbf{0.2244}$ & Theory ($\pi/14$) & -- \\
 Mass Impedance ($\sqrt{m_d/m_s}$) & $\mathbf{0.2236}$ & PDG Data & $\mathbf{0.4\%}$ \\
@@ -84,23 +84,81 @@ This implies a reversal of the standard cause-and-effect relationship:
 
 
 
-% --- Load J Consistency Tags ---
+% --- Load Dynamic Jarlskog Tags ---
+\CatchFileBetweenTags{\JarlskogMatrixVal}{calculations/flavor_geometry.tex}{JarlskogMatrixVal}
+\CatchFileBetweenTags{\JarlskogGeoVal}{calculations/flavor_geometry.tex}{JarlskogGeoVal}
 \CatchFileBetweenTags{\JConsistencyPct}{calculations/flavor_geometry.tex}{JConsistencyPct}
-% Note: Ensure \EntropicCostVal is defined (usually TgeoVal from Paper I) or use explicit value if needed.
-% For this snippet, assuming TgeoVal is loaded or hardcoded from context.
+\CatchFileBetweenTags{\JarlskogMatrixEq}{calculations/flavor_geometry.tex}{JarlskogMatrixEq}
 
-\section{Structural Resonance: The Golden Cost of Time}
-We observe a striking geometric relationship between the magnitude of CP Violation ($J_{CKM}$, derived via the matrix product) and the Vacuum Temporal Tax ($T_{geo}$, derived in Paper I via lattice entropy).
+\section{The Golden Shadow Theorem: CP Violation as Entropic Projection}
 
-We propose the exact structural identity linking the 4D manifold to the 8D lattice metabolic cost:
+We observe a striking numerical relationship between two independently derived quantities:
+\begin{itemize}
+    \item \textbf{$J_{CKM}$:} The magnitude of CP violation, computed from the CKM matrix using discrete lattice angles (transcendental functions of integers like $\pi/14$).
+    \item \textbf{$T_{geo}$:} The Vacuum Temporal Tax, derived in Paper I from bulk lattice entropy (algebraic functions of $\phi$ and $\Delta$).
+\end{itemize}
+These quantities are constructed from mathematically distinct number fields, yet their values agree to within 2\%.
+
+\subsection{The Holographic Correspondence}
+In the continuous limit—where the $E_8$ lattice structure approaches the $H_4$ Coxeter symmetry, we propose a correspondence between 4-dimensional CP violation and 8-dimensional entropic cost:
+
 \begin{equation}
-    J_{geo} = (\phi^2 \cdot \eta) \cdot T_{geo}
+    J_{ideal} = (\phi^2 \cdot \eta) \cdot T_{geo} \approx \textbf{\JarlskogGeoVal}
+    \label{eq:golden_shadow}
 \end{equation}
 
-Comparing the matrix-derived value ($J_{CKM}$) to this geometric prediction ($J_{geo}$):
+where $\phi = (1+\sqrt{5})/2$ is the Golden Ratio inherent to 5-fold symmetry, and $\eta$ is the manifold quantization efficiency derived in Paper I. This $J_{ideal}$ represents the \textbf{bulk phonon perception} of CP violation—the value expected if the lattice could maintain perfect $H_4$ symmetry without discrete quantization constraints.
+
+\subsection{The Quantization Gap}
+The actual CKM matrix, constrained by integer boundaries and discrete apertures, yields the physical observable:
+
 \begin{equation}
-    \Delta_J = \frac{|J_{CKM} - J_{geo}|}{J_{geo}} \approx \textbf{\JConsistencyPct\%}
+\begin{split}
+    J_{CKM} &= \JarlskogMatrixEq \\
+    &\approx \JarlskogMatrixVal
+\end{split}
 \end{equation}
 
-\subsection{Physical Interpretation}
-The agreement to within $\approx 2\%$ confirms that Time Asymmetry is not an accidental parameter. Just as a 3D object casts a 2D shadow, the metabolic cost ($T$) of the 8D lattice casts a ``Golden Shadow'' onto the 4D manifold. That shadow is CP violation ($J$). The factor $\phi^2 \approx 2.618$ represents the holographic projection of the 5-fold symmetry ($\sigma=5$) onto the causal axis.
+Comparing the matrix-derived value to the continuous geometric prediction:
+
+\begin{equation}
+    \Delta_J = \frac{|J_{CKM} - J_{ideal}|}{J_{ideal}} \approx \textbf{\JConsistencyPct\%}
+\end{equation}
+
+\begin{table}[h]
+\centering
+\caption{\textbf{CP Violation: Discrete vs. Continuous Geometry.} The comparison reveals a structural correspondence between the knot topology and the bulk geometry.}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{lll}
+\toprule
+\textbf{Category} & \textbf{Surface ($J_{CKM}$)} & \textbf{Bulk ($J_{ideal}$)} \\
+\midrule
+\textbf{Value}    & $\JarlskogMatrixVal$         & \JarlskogGeoVal             \\
+\textbf{Source}   & Unitary Matrix               & Golden Ratio                \\
+\textbf{Details}  & ($\pi/14, \dots$)            & ($\phi^2 \eta T$)           \\
+\textbf{Type}     & Transcendental               & Algebraic                   \\
+\midrule
+\textbf{Deviation} & \multicolumn{2}{c}{\textbf{\JConsistencyPct\%} (Projection Entropy)} \\
+\bottomrule
+\end{tabular}
+\label{tab:jarlskog_gap}
+\end{table}
+
+
+\subsection{Physical Interpretation: The Golden Shadow}
+The 2\% discrepancy is not experimental error; both $J_{CKM}$ and $J_{ideal}$ are purely theoretical calculations. Rather, it quantifies the \textbf{Geometric Entropy} of projecting continuous symmetries onto a discrete substrate.
+
+\begin{itemize}
+    \item \textbf{$J_{ideal}$ (Bulk):} The ``Phonon Perspective", the smooth, continuous limit governed by $\phi$ (irrational).
+    \item \textbf{$J_{CKM}$ (Surface):} The ``Knot Perspective"—the quantized reality governed by integer channels (rational).
+\end{itemize}
+
+The gap measures the irreducible information loss when forcing an irrational symmetry onto an integer lattice. It is the ``pixelation" of continuous geometry.
+
+\textbf{Theorem:} Just as a 3D object casts a 2D shadow, the 8-dimensional entropic cost of the lattice casts a 4-dimensional ``shadow." That shadow is CP violation.
+\begin{quote}
+    \textit{CP violation is the projection of lattice entropy onto the chiral manifold, subject to a $\sim$2\% quantization tax from discretizing $H_4$ symmetry.}
+\end{quote}
+
+\subsection{Falsification Criterion}
+This correspondence makes a definitive prediction for future precision physics. If improved measurements or lattice calculations refine the parameters, the gap $\Delta_J$ must remain stable at $\approx 2\%$. It cannot shrink to zero (which would imply a numerical coincidence between transcendental and algebraic numbers) nor exceed $5\%$ (which would falsify the correspondence). The gap is a feature, not a bug—it is the measurable signature of the vacuum's discrete fabric.

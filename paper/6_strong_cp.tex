@@ -20,21 +20,27 @@ CP violation is a topological phase shift. In this framework, we distinguish bet
 \end{enumerate}
 
 \subsection{Theorem: The Twist-Free Interaction Space}
-\textbf{Statement:} The Strong CP parameter $\theta$ is identically zero because the Interaction Remainder subspace is simply connected relative to the causal manifold.
+
+\textbf{Statement:} The Strong CP parameter $\theta$ is identically zero because the geometry that supports non-trivial winding numbers (instantons) is entropically eliminated by the Persistence Principle.
 
 \textbf{Proof:}
 \begin{enumerate}
-    \item \textbf{Topology of Winding:} A non-zero $\theta$ requires the gauge field to possess a non-trivial winding number (Pontryagin index) around the spacetime manifold. This requires the field's domain to map non-trivially to the homotopy groups of the boundary.
-    \item \textbf{Internal Decoupling:} The Color field ($SU(3)$) lives in the Interaction Remainder ($\sigma - \chi = 3$). This space is defined as the interior capacity of the node, distinct from the exterior boundary ($\chi$) that couples to the manifold metric.
-    \item \textbf{Trivial Homotopy:} An internal symmetry space that does not participate in the Manifold Projection ($\pi D$) cannot inherit the winding defects of the manifold. The interaction space is ``Twist-Free'' by construction.
+    \item \textbf{Topology of Winding:} A non-zero $\theta$ requires the gauge field to possess a non-trivial Pontryagin index (winding number) around the spacetime manifold. This requires the field's domain to map non-trivially to the homotopy groups of the manifold boundary ($\pi_3(S^3)$).
+    
+    \item \textbf{Geometric Orthogonality:} As derived in Paper I, the Color field ($SU(3)$) resides in the \textbf{Interaction Remainder} subspace ($\sigma - \chi = 3$). This subspace is the internal capacity of the node, geometrically orthogonal to the Spacetime Anchor ($\chi=2$) that defines the manifold boundary.
+    
+    \item \textbf{The Entropic Veto (Derivation from IE):}
+    Consider two candidate vacuum geometries:
+    \begin{itemize}
+        \item \textbf{Case A (Coupled):} The Color sector couples to the manifold topology. This permits $\theta \neq 0$. To define the vacuum state, the system must encode the specific value of $\theta$. This incurs a \textbf{Configurational Entropy cost} of $S_\theta > 0$.
+        \item \textbf{Case B (Decoupled):} The Color sector is orthogonal to the manifold. The winding number is geometrically undefined (structurally zero). The information cost to define $\theta$ is $S_\theta = 0$.
+    \end{itemize}
+    By the Principle of Least Entropic Action, the vacuum naturally relaxes into Case B. The ``missing" $\theta$ parameter is not a fine-tuning problem; it is the result of the vacuum minimizing its informational overhead.
 \end{enumerate}
 
 \begin{equation}
-\theta_{QCD} \equiv 0
+    \theta_{QCD} = 0 \quad (\text{Entropic Minimum})
 \end{equation}
-
-\textbf{Physical Consequence:} There is no ``tuning'' required. The $\theta$ parameter measures the twist of the color space relative to the manifold. Since the color space is orthogonal to the manifold projection (it is the remainder), the relative twist is geometrically undefined, or effectively zero.
-
 \subsection{The Unitary CP Budget}
 Consistency with the Persistence Principle reinforces this prohibition. The lattice possesses a strictly allocated local capacity for Time Asymmetry, which is fully consumed to establish the Arrow of Time (the Chiral Diode).
 
@@ -54,8 +60,14 @@ This geometric resolution eliminates the need for the Peccei-Quinn mechanism, ge
         \item \textit{Prediction:} ADMX, IAXO, and future axion searches will return \textbf{Null Results} indefinitely.
         \item \textit{Falsification:} The discovery of a QCD axion would falsify the Topological Prohibition theorem.
     \end{itemize}
-    \item \textbf{Zero Neutron EDM:} The neutron electric dipole moment is structurally zero (limited only by electroweak radiative corrections, $\sim 10^{-32}$ e cm).
+    \item \textbf{Zero Neutron EDM (The Hard Test)}
+        While Axion searches can always push bounds to higher energies, the Neutron Electric Dipole Moment (nEDM) offers a definitive cut.
+        \begin{itemize}
+            \item \textbf{Axion Models:} Predict a small but non-zero nEDM correlated with the axion mass.
+            \item \textbf{$E_8$-Persistence:} Predicts the strong-sector contribution to the nEDM is \textbf{exactly zero}. The only contribution comes from the CKM phase (electroweak sector), predicting $d_n \sim 10^{-32} e \cdot \text{cm}$.
+        \end{itemize}
     \begin{itemize}
         \item \textit{Prediction:} Next-generation experiments (n2EDM) will find no deviation from the Standard Model electroweak background.
+        \item \textit{Falsification:} Any detection of $d_n > 10^{-31} e \cdot \text{cm}$ in next-generation experiments (e.g., n2EDM) would falsify the Topological Prohibition theorem and refute this framework.
     \end{itemize}
 \end{enumerate}
