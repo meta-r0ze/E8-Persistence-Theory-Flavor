@@ -1,0 +1,27 @@
+Please review and classify every issue you find into exactly one of these categories, and lead with the category label:
+FATAL-IDEA (Map failure): The core logic or mathematics is wrong in a way that undermines the paper's central claims. Would cause rejection regardless of presentation.
+SHARE (gov failure): Should be fixed before widely sharing as an idea.  Most will interpret the spirit of what is written, but the text needs to be more exact to prevent inaccurate readings.
+CRITICAL-PUBLISH (protocol failure): Does not affect the core logic but would likely cause rejection by a referee or editor. Must be fixed before submission.
+IMPROVE (Mar optimization): Makes the paper clearer or stronger but is not blocking. Worth fixing if the work is not burdensome.
+REMOVE-SIMPLIFY (cap/tol optimization): Anything that is over verbose and can be simplified or should be removed.
+POLISH (substrate alignment): Stylistic, LaTeX, or presentational. Fix if convenient, ignore if not.
+For each issue, also estimate: (a) does fixing it change the math or logic, (b) does fixing it change the narrative or tone, (c) is it visible to a casual reader vs. only a specialist referee.
+SCOPE-DEFENSE: (cap failure) articulate just enough for this paper.  Never introduce a generalized concept without immediately bounding its application in the current text. If you mention a broader implication, you must instantly tell the referee, "I am only using X to solve Y in this paper; the general case of X is the subject of a companion paper.  Are my forward-references clearly labeled as 'future work' versus 'derived later in this text'?
+PARAMETER-FREE CHECK (Toll optimization): derivations contain strictly zero free parameters and rely only on discrete geometric counting/invariants. Explicitly flag any step where a continuous tunable parameter, an arbitrary scaling factor, or an unstated physical assumption sneaks into the math.
+ANACHRONISM CHECK: Flag any instance where a derivation relies on a physical concept (like mass, charge, or gravity) before that concept has been formally derived in the framework hierarchy.
+JARGON-CHECK (protocol failure): look for "Jargon Walls." This crosses a number of disciplines of which very few will have all of.  Ideally when using complex systems terminology a bridge or saying it in simpler way when possible ideally (not required if it would explode the length of the paper).
+
+TONE: Never declare that standard physics is "arbitrary," "wrong," or an "axiom." Instead, show that standard physics perfectly emerges from this deeper geometric foundation.
+- Frame your theory as a "Dual": Physicists love mathematical dualities (like AdS/CFT). If you frame your theory by saying, "The kinematic behavior of the Standard Model can be perfectly mapped to the thermodynamic limits of a finite-capacity network," physicists will nod along. If you say, "The Standard Model is just a capacity network," they will close the paper.
+- Let the math do the bragging: You don't need to say "We have completely eliminated the need for post-hoc hypercharge assignment." The reader will see that you derived it. Just say: "We derive the fractional hypercharge assignments directly from geometric flux conservation." The modesty makes the mathematical result feel much more powerful.
+
+Respect that the reader is an adult who can evaluate a bold claim on its merits and don’t bikeshed or goalpost shift. Every paper has wording that is debatable the best way to present it and can bounce between two different prose depending on the reviewer. Does an issue actually identify something the paper gets wrong?
+
+If you find no FATAL-IDEA issues, say so explicitly at the top of your review.  Would a complex systems scientist want to read this in its current form? Would a physicist want to read this in its current form?  
+
+- The abstract should answer 'what', the introduction should answer 'why', the conclusion answers "so what?"
+- Each system depends on only what is below it.  For example IE is a general framework that depends on information theory and system 1, the substrate doesn’t “know”  about general relativity, electromagnetic charge or other higher level concepts and can’t depend on them.  It can only depend on system 0 and IE and info theory etc.
+- While there are companion papers in the works this paper should be as stand alone as possible.
+- This is not published yet and we can change anything, a name, the layout, the example, literally anything to make the paper better.
+
+For anything you find also suggest latex fixes that can be inserted/edited into the paper as well as if multiple places need to be fixed to fully resolve the issue.
