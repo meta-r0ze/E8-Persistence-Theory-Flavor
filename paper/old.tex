@@ -1,0 +1,69 @@
+%% THIS has been moved from the other paper
+
+\CatchFileBetweenTags{\CabibboAngleVal}{constants.tex}{CabibboAngleVal}
+\CatchFileBetweenTags{\CabibboAngleExperimentalValue}{constants.tex}{CabibboAngleExperimentalValue}
+\CatchFileBetweenTags{\CabibboAngleEq}{constants.tex}{CabibboAngleEq}
+\CatchFileBetweenTags{\CabibboAngleSigma}{constants.tex}{CabibboAngleSigma}
+
+\subsection{The Leakage Partition (Cabibbo Angle \texorpdfstring{$\theta_C$}{thetaC})}
+\label{subsec:generation_coupling}
+\label{subsec:cabibbo}
+
+\subsubsection{The Architectural Requirement}
+Under \textbf{Rule 1: Capacity Partitioning}, a persistent system must allocate fractional bandwidth to handle internal state transitions without disrupting its primary operations. The third \textbf{Protocol} allocation of the Capacity Partition is the \textbf{Generation Coupling}: the strictly bounded geometric leakage rate between the resonant tiers (generations) of the lattice. In the Standard Model, this manifests as the Cabibbo Angle ($\theta_C \approx 13.0^\circ$, or the primary CKM matrix element $|V_{us}|$), parameterizing quark mixing between the first and second generations.
+
+We derive the Cabibbo Angle geometrically as this specific fractional bandwidth allocation. While the Weak Mixing Angle partitions the macroscopic spacetime forces, the Cabibbo Angle represents the strictly bounded \textbf{Geometric Leakage} of state transitions within the internal generational structure.
+
+To derive this leakage probability, we must define the exact geometric ratio of the inter-generational interface to the available active channel capacity using the substrate invariants:
+
+\begin{enumerate}
+    \item \textbf{The Interface ($\pi$):} Generational mixing is an internal state transition, occurring within the node's symmetry space prior to macroscopic spatial propagation. It is therefore bounded by the \textbf{unscaled} geometry of the fundamental interaction loop (Wilson Loop), not the macroscopic boundary ($\pi\Delta$).
+
+    On the discrete $D_4$ lattice, the Wilson Loop is a polygon. However, generational mixing is a \textbf{resonance transition} between distinct generational states of the same topological defect. The defect's internal structure is defined by the continuous field approximation (hydrodynamic limit, where wavelength $\gg$ lattice spacing). In this limit, the loop perimeter becomes the continuum value $\pi d$ for diameter $d=1$.
+
+    The value $\pi$ is forced: the mixing angle must be transcendental to avoid rational commensurability with the lattice periodicity. If $\sin\theta_C$ were rational, the generational states would be resonantly locked to the lattice, preventing independent evolution. $\pi$ is the unique transcendental arising from isotropic circle geometry in the continuous limit.
+
+    \item \textbf{The Active Flavor Width ($\nu - \chi$):} The total chiral capacity is $\nu=16$. However, the topological boundary $\chi=2$ serves as the ``Identity Lock'' that maintains the particle's structural stability against the vacuum. These 2 channels are \textbf{not available} for mixing: if they participated, the defect would lose its identity, becoming flavor violation rather than generational mixing.
+
+    The free bandwidth is therefore strictly $\nu - \chi = 14$. Using $\nu = 16$ would predict $\sin\theta_C = \pi/16 \approx 0.196$, failing by $4\sigma$. The boundary lock is geometrically mandatory; its subtraction is not a fitting choice but the conservation of topological identity.
+\end{enumerate}
+
+\subsubsection{The Leakage Ratio}
+The mixing angle is defined by the strict geometric ratio of the Interface to the Active Flavor Width. This determines the maximum angle at which a signal can ``slip'' from one generation to the next without exceeding the available channel capacity and breaking the topological lock. 
+
+Physically, this ratio represents the quantum tunneling amplitude between generational resonances: while the boundary ($\chi$) protects the particle's core identity, the open channels ($14$) permit a precise, geometrically defined leakage rate between adjacent generation tiers.
+
+\begin{equation}
+\sin \theta_C = \frac{\text{Interface}}{\text{Flavor Width}} = \frac{\pi}{\nu - \chi}
+\end{equation}
+
+No other ratio is possible: $\pi$ is the unique continuum-limit circumference, and $\nu - \chi = 14$ is the unique free capacity after identity lock. The aspect ratio $\pi/14 \approx 0.224$ is the maximal geometric leakage that preserves both (i) transcendental mixing (incommensurate with lattice periodicity) and (ii) topological identity (boundary lock intact).
+
+\textbf{Numerical Calculation:}
+\begin{equation}
+\sin \theta_C = \frac{\pi}{14} \approx \mathbf{\CabibboAngleVal}
+\end{equation}
+\begin{equation}
+\theta_C = \arcsin\left(\frac{\pi}{14}\right) \approx 12.97^\circ
+\end{equation}
+
+\textit{Scope Defense:} The leakage ratio uses the bare, unscaled boundary ($\pi$) because generational mixing is strictly an internal state transition. It occurs within the node's internal symmetry space prior to macroscopic spatial propagation, bounded by internal hardware capacity ($14$) and unscaled geometry. The macroscopic boundary $\pi\Delta$ governs spatial propagation (System 5, Section \ref{sec:resonant_interface}); here we address internal mixing (System 4, Capacity Partition).
+
+\subsubsection{Validation: Precision Flavor Physics}
+We compare this geometric derivation to the world average extracted from kaon and hyperon decays.
+
+\vspace{0.5em}
+\begin{tabular}{ll}
+\textbf{Prediction:} & \CabibboAngleVal \\
+\textbf{Experiment:} & \CabibboAngleExperimentalValue \\
+\textbf{Accuracy:}   & $\CabibboAngleSigma \sigma$ \\
+\end{tabular}
+\vspace{0.5em}
+
+\noindent \textbf{Physical Interpretation:} The Cabibbo Angle is exactly the geometric aspect ratio ($\pi/14$) of a chiral channel constrained by a topological boundary, representing the maximum permissible information leakage rate of the lattice.
+
+\subsubsection{Geometric Consequence: The Structural Unity of Gauge and Flavor}
+
+The derived Cabibbo mixing ($\sin \theta_C \approx 0.224$) is nearly identical to the Weak Mixing Angle ($\sin^2 \theta_W \approx 0.223$). In the Standard Model, this is an unexplained empirical coincidence. Here it is a \textbf{structural necessity}: both are partition coefficients of the same finite bandwidth budget.
+
+This near-equality, often noted as an unexplained empirical coincidence in the Standard Model, is here revealed as a structural consequence: both quantities are partition coefficients of the exact same finite bandwidth budget. The geometry that partitions the forces ($\Delta/N_{sys}$) is structurally coupled to the geometry that mixes the masses ($\pi/(\nu-\chi)$). Both are manifestations of the exact same underlying lattice capacity, rigidly allocating finite bandwidth between Temporal Coherence (the forces, $\Delta/N_{sys}$) and Generational Leakage (the matter, $\pi/(\nu-\chi)$). $E_8$-Persistence theory provides the structural mechanism uniting gauge and flavor sectors: the same lattice capacity $\nu=16$ rigidly allocates bandwidth between Temporal Coherence ($\Delta/N_{sys}$) and Generational Leakage ($\pi/(\nu-\chi)$). The near-equality is not accidental; it is the signature of a single, exhausted budget.

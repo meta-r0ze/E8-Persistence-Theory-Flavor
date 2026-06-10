@@ -1,11 +1,12 @@
 \CatchFileBetweenTags{\flavorTotalChiVal}{calculations/flavor_geometry.tex}{flavorTotalChiVal}
 \CatchFileBetweenTags{\flavorReducedChiVal}{calculations/flavor_geometry.tex}{flavorReducedChiVal}
+\CatchFileBetweenTags{\AtmosAngleVal}{calculations/flavor_geometry.tex}{AtmosAngleVal}
 
 \section{The Zero-DOF Global Flavor Fit}
 
 To rigorously test the validity of the structural duality framework, we performed a global $\chi^2$ consistency check across the complete flavor sector. This audit incorporates $17$ fundamental observables: all $9$ CKM matrix elements, the Jarlskog invariant, the Unitarity Triangle angles ($\delta_q, \gamma, \sin2\beta$), and the $4$ PMNS matrix parameters ($\theta_{12}, \theta_{23}, \theta_{13}, \delta_{CP}^\nu$).
 
-Crucially, standard global fits (like those performed by the Particle Data Group or NuFIT) achieve their precision by allowing underlying parameter inputs to float. In the $E_8$-Persistence theory, there are \textbf{zero floating parameters}. Every value is derived strictly from the lattice invariants. The Degrees of Freedom (DOF) for this fit is exactly equal to the number of observables ($N=17$).
+Crucially, standard global fits (like those performed by the Particle Data Group or NuFIT) achieve their precision by allowing underlying parameter inputs to float. In the $E_8$-Persistence theory, every value is derived strictly from the lattice invariants. The Degrees of Freedom (DOF) for this fit is exactly equal to the number of observables ($N=17$).
 
 \begin{equation}
     \chi^2_{total} \approx \flavorTotalChiVal \quad \left( \text{Reduced } \chi^2 \approx \flavorReducedChiVal \right)
@@ -13,27 +14,4 @@ Crucially, standard global fits (like those performed by the Particle Data Group
 
 A reduced $\chi^2$ of $\approx \flavorReducedChiVal$ signifies an exceptionally strong fit to empirical reality. The PMNS neutrino sector predictions act cooperatively with the CKM predictions, driving the global statistical confidence closer to unity. 
 
-The primary contribution to the residual ($\approx 2.5\sigma$) arises strictly from the $V_{ud}/V_{cs}$ sector, where the geometric enforcement of perfect lattice unitarity clashes with the current experimental tension known as the ``Cabibbo Angle Anomaly.'' The model predicts this tension is due to systematic underestimation in standard measurements; the true vacuum remains perfectly unitary.
-
-\section{Structural Audit: Constrained Mixing Analysis}
-
-The standard approach to flavor physics fits the CKM and PMNS matrices to data parameters. We invite the neutrino and flavor physics communities (e.g., T2K, NOvA, DUNE, Belle II) to invert this process, using the lattice invariants as fixed priors.
-
-\subsection{Neutrino Global Fit (Geometric Prior)}
-
-\textbf{Task:} Run the global neutrino oscillation fit (NuFIT) with the mixing angles locked to the exact geometric ratios derived from the lattice projection:
-\begin{itemize}
-    \item \textbf{Solar Angle:} $\sin^2 \theta_{12} = \frac{1}{2\phi} \approx \SolarAngleVal$ (The Golden Ratio Aperture).
-    \item \textbf{Atmospheric Angle:} $\sin^2 \theta_{23} = \frac{1}{\chi} = 0.5$ (Maximal Mixing).
-    \item \textbf{Reactor Angle:} $\sin^2 \theta_{13} = \frac{3}{\alpha^{-1}} \approx \ReactorAngleVal$ (The Interaction Leak).
-\end{itemize}
-
-\textbf{Expected Result:} The ``Geometric Prior" fits the global data within $1\sigma$, naturally resolving the octant degeneracy in $\theta_{23}$ by enforcing maximal mixing.
-
-\textbf{Falsification Criterion:} A global fit degradation of $\Delta\chi^2 > 9$ ($3\sigma$) compared to the standard floating-parameter fit.
-
-\subsection{Rare Decay Precision Test (\texorpdfstring{$K \to \pi\nu\bar{\nu}$}{Ktopinubar})}
-
-\textbf{Task:} Compare NA62 and KOTO event rates directly to geometrically derived scattering cross-sections based on the vacuum impedance ($\alpha^2$) and the CKM geometric interference ($V_{ts}$).
-
-\textbf{Expected Result:} Event rates align with geometric impedance predictions without requiring effective field theory loop corrections.
+The primary contribution to the residual ($\approx 2.5\sigma$) arises strictly from the $V_{ud}/V_{cs}$ sector, where the geometric enforcement of perfect lattice unitarity clashes with the current experimental tension known as the ``Cabibbo Angle Anomaly.'' The geometric framework predicts exact unitarity. If future measurements resolve the Cabibbo Angle Anomaly in favor of stricter unitarity, this would support the lattice hypothesis; if the tension persists or grows, the geometric unitarity enforcement would require revision.

@@ -1,0 +1,35 @@
+\begin{table*}[t] % Changed to [t] to prefer top-of-page placement for large tables
+\centering
+\caption{\textbf{Derivation of CKM Matrix Elements from $E_8$.}}
+\label{tab:ckm_derivation}
+\renewcommand{\arraystretch}{1.7} 
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{} l l l c c r @{}} 
+\toprule
+\textbf{Transition} & \textbf{Elem.} & \textbf{Geometric Logic / Formula} & \textbf{Predicted} & \textbf{Target (PDG)} & \textbf{Dev.} \\
+\midrule
+\multicolumn{6}{l}{\textit{Generation 1 (Geometric Inputs)}} \\
+$u \to d$ & $V_{ud}$ & Unitary Persistence ($c_{12}c_{13}$) & \textbf{\VudVal} & \VudExp & $\VudSig\sigma$ \\
+$u \to s$ & $V_{us}$ & Chiral Leak Bound ($s_{12}c_{13}$) & \textbf{\VusVal} & \VusExp & $-\VusSig\sigma$ \\
+$u \to b$ & $V_{ub}$ & Quantum Tunneling Penalty ($s_{13}e^{-i\delta}$) & \textbf{\VubVal} & \VubExp & $-\VubSig\sigma$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Generation 2 (Derived via Unitarity)}} \\
+$c \to d$ & $V_{cd}$ & Unitary Reflection ($|-s_{12}c_{23} - c_{12}s_{23}s_{13}e^{i\delta}|$) & \textbf{\VcdVal} & \VcdExp & $-\VcdSig\sigma$ \\
+$c \to s$ & $V_{cs}$ & Unitary Persistence ($|c_{12}c_{23} - s_{12}s_{23}s_{13}e^{i\delta}|$) & \textbf{\VcsVal} & \VcsExp & $+\VcsSig\sigma$ \\
+$c \to b$ & $V_{cb}$ & Dimensional Promotion ($s_{23}c_{13}$) & \textbf{\VcbVal} & \VcbExp & $+\VcbSig\sigma$ \\
+\midrule
+\multicolumn{6}{l}{\textit{Generation 3 (Derived via Interference)}} \\
+$t \to d$ & $V_{td}$ & Destructive Interference ($|s_{12}s_{23} - c_{12}c_{23}s_{13}e^{i\delta}|$) & \textbf{\VtdVal} & \VtdExp & $+\VtdSig\sigma$ \\
+$t \to s$ & $V_{ts}$ & Phase Interference ($|-c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta}|$) & \textbf{\VtsVal} & \VtsExp & $+\VtsSig\sigma$ \\
+$t \to b$ & $V_{tb}$ & Unitary Persistence ($c_{23}c_{13}$) & \textbf{\VtbVal} & \VtbExp & $-\VtbSig\sigma$ \\
+\midrule
+\midrule
+\multicolumn{6}{c}{\textbf{Geometric Basis Parameters (Inputs)}} \\
+\multicolumn{2}{l}{\textbf{Parameter}} & \textbf{Geometric Source} & \textbf{Value} & \textbf{Physical Meaning} & \\
+\multicolumn{2}{l}{$s_{12}$ (Cabibbo)} & $\sTwelveEq$ & \sTwelveVal & Chiral Leak Bound & \\
+\multicolumn{2}{l}{$|V_{cb}|$ (Dim. Shift)} & $\VcbEq$ & \VcbVal & Dimensional Promotion & \\
+\multicolumn{2}{l}{$s_{13}$ (Tunneling)} & $\sThirteenEq$ & \sThirteenVal & Tunneling Penalty & \\
+\multicolumn{2}{l}{$\delta_{CP}$ (CP Phase)} & $\CPPhaseEq$ & $\CPPhaseVal$ & Manifold Misalignment & \\
+\bottomrule
+\end{tabular}
+\end{table*}

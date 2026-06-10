@@ -63,17 +63,18 @@
 \CatchFileBetweenTags{\sThirteenVal}{calculations/flavor_geometry.tex}{s13Val}
 \CatchFileBetweenTags{\sThirteenEq}{calculations/flavor_geometry.tex}{s13Eq}
 \CatchFileBetweenTags{\sThirteenExp}{calculations/flavor_geometry.tex}{s13ExperimentalValue}
-\CatchFileBetweenTags{\sThirteenAccText}{calculations/flavor_geometry.tex}{s12AccText}
+\CatchFileBetweenTags{\sThirteenAccText}{calculations/flavor_geometry.tex}{s13AccText}
 
 \CatchFileBetweenTags{\CPPhaseVal}{calculations/flavor_geometry.tex}{CPPhaseVal}
 \CatchFileBetweenTags{\CPPhaseEq}{calculations/flavor_geometry.tex}{CPPhaseEq}
 \CatchFileBetweenTags{\CPPhaseAccText}{calculations/flavor_geometry.tex}{CPPhaseAccText}
 
 \section{The Interaction Cross-Talk: The CKM Matrix and Topological Knots}
+\label{sec:ckm_matrix}
 
 In standard particle physics, the Cabibbo-Kobayashi-Maskawa (CKM) matrix is a unitary matrix that dictates the probability of quarks changing flavor via the Weak interaction. Standard theories treat these matrix elements as arbitrary free parameters requiring experimental measurement. 
 
-In the $E_8$-Persistence framework, the CKM matrix emerges as a strict geometric consequence of substrate channel limits. The six observed quarks are not fundamental point particles, but observable manifestations of the $\chi=2$ topological defect occupying the three orthogonal Triality frames (generations) of the $D_4$ internal symmetry sector. To understand this, we must first translate the phenomenological entities (quarks) into their structural equivalents:
+In the $E_8$-Persistence framework, the CKM matrix emerges as a strict geometric consequence of substrate channel limits. To understand this, we must first translate the phenomenological entities (quarks) into their structural equivalents:
 \begin{itemize}
     \item \textbf{Quarks as Topological Knots:} The six observed quarks ($u, d, c, s, t, b$) are the observable manifestations of the $\chi=2$ topological defect occupying the three orthogonal Triality frames of the $D_4$ internal symmetry sector. 
     \item \textbf{Generations as Dimensional Tiers:} The three generations correspond to escalating geometric complexity required to stabilize the defect: Linear (Up/Down: $u, d$), Areal (Charm/Strange: $c, s$), and Volumetric (Top/Bottom: $t, b$).
@@ -97,7 +98,9 @@ The geometric admittance perfectly balances the interface demand against the dis
 \begin{equation}
     s_{12} = \sTwelveEq = \sTwelveVal
 \end{equation}
-This derivation explains why the primary mixing angle is relatively large: it is governed strictly by the internal channel capacity of the node, without yet engaging the macroscopic vacuum impedance. \sTwelveAccText
+Here $\pi$ enters as the continuum-limit ratio for phase-front closure around the topological defect, consistent with its role in the geometric impedance $Z_CAP = \pi \Delta$. The discrete lattice spacing is $\ell = 1$; the phase front traverses the unscaled circular boundary $\pi\ell = \pi$.
+
+This derivation identifies the primary mixing angle as the geometric admittance of the chiral boundary: relatively large because it is governed by the internal channel capacity rather than the macroscopic vacuum impedance. \sTwelveAccText
 
 
 
@@ -113,24 +116,34 @@ This mechanism explicitly explains the suppression of $|V_{cb}|$ relative to $s_
 Note: In standard parameterization, this physical transition determines the formal mixing angle via $s_{23} = |V_{cb}| / c_{13}$.
 
 
-\subsection{The Non-Sequential Tunneling Penalty (\texorpdfstring{$s_{13}$}{s13})}
-A direct transition from the linear ground state to the volumetric tier ($u \rightarrow b$) skips the intermediate geometry. Because continuous geometric deformation strictly requires traversing adjacent dimensions, this transition is classically forbidden and must proceed via discrete quantum tunneling.
+\subsection{The Non-Adjacent Subspace Transition Penalty (\texorpdfstring{$s_{13}$}{s13})}
+A direct transition from the linear ground state to the volumetric tier ($u \to b$) skips the intermediate areal geometry. Because continuous geometric deformation strictly requires traversing adjacent dimensions sequentially, this transition is classically forbidden and must proceed via a discrete \textbf{Non-Adjacent Subspace Transition} (or coordinate jump) across the dimensional gap (a discrete lattice transition distinct from continuous wavefunction tunneling; no potential barrier is involved).
 
-The structural cost is a single irreducible bit of information ($\mathbf{K}=1$). Because this leap bypasses the normal dimensional progression, the impedance is maximal: the transition must couple to the full topological boundary across the vacuum ($\chi\alpha^{-1}$) while overcoming the baseline phase interface ($\pi$):
+The structural cost of this leap is a single, irreducible bit of coordinate information ($K = 1$). Because this transition bypasses the normal dimensional progression, the geometric impedance is maximal. The transition admittance ($s_{13}$) must couple to the full topological boundary across the bulk vacuum ($\chi\alpha^{-1}$), while overcoming the baseline circular phase interface ($\pi$):
 \begin{equation}
     s_{13} = \sThirteenEq = \sThirteenVal
 \end{equation}
-This derivation show that $s_{13}$ is the smallest mixing element because it represents a maximal violation of smooth geometric deformation. \sThirteenAccText
 
+This derivation show that $s_{13}$ is the smallest mixing element because it represents a maximal violation of smooth geometric deformation. This \sThirteenAccText
+
+This geometric transition requires no continuous potential barrier; the suppression arises strictly from the discrete coordinate jump across orthogonal lattice subspaces.
 
 \subsection{The CP-Violating Phase (\texorpdfstring{$\delta_{CP}$}{delta CP})}
-In standard physics, the origin of CP violation (the asymmetry between matter and antimatter) is parameterized by the Dirac phase $\delta_{CP}$, whose value is empirically inserted. 
 
-In the $E_8$-Persistence geometry, complex phase represents the angular offset between orthogonal manifolds. The CP-violating phase is strictly the angular misalignment between the interaction symmetry ($\sigma=5$) mediating the transition and the topological boundary ($\chi=2$) anchoring the defect:
+In standard physics, the origin of CP violation (the asymmetry between matter and antimatter) is parameterized by the Dirac phase $\delta_{CP}$, whose value is empirically inserted.
+
+In the $E_8$-Persistence geometry, this phase is the necessary angular misalignment between the orthogonal manifold components that define a localized defect. To exist stably, a defect is represented by a complex state coordinate $z = x + iy$ in the projected transition plane:
+\begin{itemize}
+    \item \textbf{The Real Component ($x = \chi$):} The static, real boundary constraint that anchors the defect to the manifold (the Euler characteristic, $\chi = 2$).
+    \item \textbf{The Imaginary Component ($y = \sigma$):} The active, dynamical gauge transitions that generate phase rotations across the interaction manifold (the interaction symmetry order, $\sigma = 5$).
+\end{itemize}
+
+Because boundaries act as real constraints and gauge forces act as imaginary generators of phase, the complex state coordinate of the localized excitation is uniquely formulated as $z = \chi + i\sigma = 2 + 5i$. The CP-violating phase is the geometric argument (the phase lag) of this state vector:
 \begin{equation}
-    \delta_{CP} = \CPPhaseEq = \CPPhaseVal
+    \delta_{CP} = \arctan\left(\frac{\sigma}{\chi}\right) = \arctan\left(\frac{5}{2}\right) \approx \CPPhaseVal
 \end{equation}
-This \CPPhaseAccText \ This identifies the fundamental matter/antimatter asymmetry not as a broken dynamic symmetry, but as the irreducible geometric offset between a localized particle boundary and the gauge fields that move it.
+
+This maps the phase directly to the fundamental invariants of the substrate. It identifies the matter/antimatter asymmetry not as a broken dynamical symmetry, but as the static, coordinate-space misalignment between a particle's physical boundary and the gauge fields that translate it. This \CPPhaseAccText
 
 \subsection{The Full CKM Matrix Synthesis}
 
@@ -147,10 +160,12 @@ By inserting the four geometrically derived parameters ($s_{12}, |V_{cb}|, s_{13
 \end{pmatrix}
 \end{equation}
 
-\subsubsection{Geometric Interference and the Off-Diagonals}
-The off-diagonal elements in the second and third rows are not independent variables; they are the geometric consequences of enforcing unitary closure on a twisted lattice. Because the topological boundary introduces a phase offset ($\delta_{CP} \approx 68^\circ$), the transition amplitudes between generations behave as complex vectors rather than simple scalars. 
+The complete presentation and comparison to empirical targets is detailed in \cref{tab:ckm_derivation}.
 
-This results in \textbf{Geometric Interference}. For example, the transition $t \to d$ ($|V_{td}|$) is heavily suppressed not merely by ``distance'' between generations, but by geometry. The two available pathways for this transition possess a relative phase difference driven by $\delta_{CP}$. This forces a vector subtraction (destructive interference) that explicitly cancels a significant portion of the amplitude, explaining its extreme suppression without requiring arbitrary empirical tuning.
+
+
+\subsubsection{Geometric Interference and the Off-Diagonals}
+The off-diagonal elements in rows 2--3 follow from unitary closure with the geometric phase $\delta_{CP} \approx 68^\circ$. For example, $|V_{td}|$ is suppressed by destructive interference between two pathway contributions with relative phase $\delta_{CP}$, a geometric cancellation that requires no empirical tuning.
 
 \subsubsection{Note on Geometric Precision: Topology vs. Volume}
 A critical feature of this derivation is the absence of the thermodynamic friction or scaling factors that frequently appear in mass or coupling derivations. In the $E_8$-Persistence theory, physical observables fall into two distinct geometric classes:
@@ -158,7 +173,7 @@ A critical feature of this derivation is the absence of the thermodynamic fricti
     \item \textbf{Volumetric Quantities (Mass, Coupling):} These represent the \textit{content} of the lattice nodes. Because they fill the bulk manifold, they are subject to thermodynamic drag and the projection overhead of mapping discrete lattice bits into continuous spacetime.
     \item \textbf{Topological Quantities (Angles, Phases):} These represent the \textit{boundaries} between states. A boundary on an integer lattice is a precise topological cut. The geometry of an interface is determined strictly by the integer coordinates of the boundary, independent of thermodynamic friction.
 \end{itemize}
-Consequently, Flavor Mixing angles are derived as exact geometric ratios, providing a rigid test of the lattice topology unblurred by the thermodynamic bulk.
+Consequently, Flavor Mixing angles are derived as exact geometric ratios, providing a test of lattice topology that is independent of the thermodynamic drag affecting volumetric observables.
 
 \CatchFileBetweenTags{\AngleGammaVal}{calculations/flavor_geometry.tex}{AngleGammaVal}
 \CatchFileBetweenTags{\AngleGammaEq}{calculations/flavor_geometry.tex}{AngleGammaEq}
@@ -198,58 +213,3 @@ The geometric matrix uniquely fixes the standard Wolfenstein expansion parameter
 \end{split}
 \end{equation}
 \textit{Note: The standard Wolfenstein parametrization is an $\mathcal{O}(\lambda^3)$ approximation. Minor deviations in $\bar{\rho}$ and $\bar{\eta}$ from standard global fits are expected artifacts of this perturbative expansion, whereas our underlying geometric derivation is exact.}
-
-\subsubsection{Conclusion: A Zero-Parameter Matrix}
-In standard Effective Field Theories, the CKM parameters are continuous variables continuously tuned to fit empirical data. In the $E_8$-Persistence framework, the mixing hierarchy is rigidly locked to the geometric invariants $\mathbb{S} = \{\pi, \alpha^{-1}, \nu=16, \sigma=5, \chi=2, D=4\}$. 
-
-The complete presentation and comparison to empirical targets is detailed in \cref{tab:ckm_derivation}.
-
-\begin{table*}[t] % Changed to [t] to prefer top-of-page placement for large tables
-\centering
-\caption{\textbf{Derivation of CKM Matrix Elements.} The predicted geometric values are calculated entirely from the structural invariants of the $E_8$ substrate, with zero free parameters. Target values are from the PDG 2024 Global Fit.}
-\label{tab:ckm_derivation}
-\renewcommand{\arraystretch}{1.7} 
-\setlength{\tabcolsep}{6pt}
-\begin{tabular}{@{} l l l c c r @{}} 
-\toprule
-\textbf{Transition} & \textbf{Elem.} & \textbf{Geometric Logic / Formula} & \textbf{Predicted} & \textbf{Target (PDG)} & \textbf{Dev.} \\
-\midrule
-\multicolumn{6}{l}{\textit{Generation 1 (Geometric Inputs)}} \\
-$u \to d$ & $V_{ud}$ & Unitary Persistence ($c_{12}c_{13}$) & \textbf{\VudVal} & \VudExp & $\VudSig\sigma$ \\
-$u \to s$ & $V_{us}$ & Chiral Leak Bound ($s_{12}c_{13}$) & \textbf{\VusVal} & \VusExp & $-\VusSig\sigma$ \\
-$u \to b$ & $V_{ub}$ & Quantum Tunneling Penalty ($s_{13}e^{-i\delta}$) & \textbf{\VubVal} & \VubExp & $-\VubSig\sigma$ \\
-\midrule
-\multicolumn{6}{l}{\textit{Generation 2 (Derived via Unitarity)}} \\
-$c \to d$ & $V_{cd}$ & Unitary Reflection ($|-s_{12}c_{23} - c_{12}s_{23}s_{13}e^{i\delta}|$) & \textbf{\VcdVal} & \VcdExp & $-\VcdSig\sigma$ \\
-$c \to s$ & $V_{cs}$ & Unitary Persistence ($|c_{12}c_{23} - s_{12}s_{23}s_{13}e^{i\delta}|$) & \textbf{\VcsVal} & \VcsExp & $+\VcsSig\sigma$ \\
-$c \to b$ & $V_{cb}$ & Dimensional Promotion ($s_{23}c_{13}$) & \textbf{\VcbVal} & \VcbExp & $+\VcbSig\sigma$ \\
-\midrule
-\multicolumn{6}{l}{\textit{Generation 3 (Derived via Interference)}} \\
-$t \to d$ & $V_{td}$ & Destructive Interference ($|s_{12}s_{23} - c_{12}c_{23}s_{13}e^{i\delta}|$) & \textbf{\VtdVal} & \VtdExp & $+\VtdSig\sigma$ \\
-$t \to s$ & $V_{ts}$ & Phase Interference ($|-c_{12}s_{23} - s_{12}c_{23}s_{13}e^{i\delta}|$) & \textbf{\VtsVal} & \VtsExp & $+\VtsSig\sigma$ \\
-$t \to b$ & $V_{tb}$ & Unitary Persistence ($c_{23}c_{13}$) & \textbf{\VtbVal} & \VtbExp & $-\VtbSig\sigma$ \\
-\midrule
-\midrule
-\multicolumn{6}{c}{\textbf{Geometric Basis Parameters (Inputs)}} \\
-\multicolumn{2}{l}{\textbf{Parameter}} & \textbf{Geometric Source} & \textbf{Value} & \textbf{Physical Meaning} & \\
-\multicolumn{2}{l}{$s_{12}$ (Cabibbo)} & $\sTwelveEq$ & \sTwelveVal & Chiral Leak Bound & \\
-\multicolumn{2}{l}{$|V_{cb}|$ (Dim. Shift)} & $\VcbEq$ & \VcbVal & Dimensional Promotion & \\
-\multicolumn{2}{l}{$s_{13}$ (Tunneling)} & $\sThirteenEq$ & \sThirteenVal & Tunneling Penalty & \\
-\multicolumn{2}{l}{$\delta_{CP}$ (CP Phase)} & $\CPPhaseEq$ & $\CPPhaseVal$ & Manifold Misalignment & \\
-\bottomrule
-\end{tabular}
-\end{table*}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
